@@ -75,6 +75,7 @@ unsupportedJobKeys: warning
 ```
 
 See [the finding reference](docs/findings.md) for stable codes and remediation.
+Release history is documented in [CHANGELOG.md](CHANGELOG.md).
 
 ## Development
 
