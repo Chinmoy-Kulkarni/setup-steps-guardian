@@ -63,10 +63,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
-      - uses: Chinmoy-Kulkarni/setup-steps-guardian@0de8f30000634b8930a2eae1a1e7b8ae20b602dc
+      - uses: Chinmoy-Kulkarni/setup-steps-guardian@039f34cfd5f3e6f74a33f256fbad441c416515ec
 ```
 
-This is the reviewed commit behind `v1.0.0`. Keep the full SHA pin when enabling
+This is the reviewed commit behind `v1.0.1`. Keep the full SHA pin when enabling
 SetupStepsGuardian in a production repository.
 
 ### Inputs

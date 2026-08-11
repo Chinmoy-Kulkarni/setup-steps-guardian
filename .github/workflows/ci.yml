@@ -32,7 +32,7 @@ jobs:
           fail-on-warnings: "true"
 
       - name: Smoke test v1 release
-        uses: Chinmoy-Kulkarni/setup-steps-guardian@0de8f30000634b8930a2eae1a1e7b8ae20b602dc
+        uses: Chinmoy-Kulkarni/setup-steps-guardian@039f34cfd5f3e6f74a33f256fbad441c416515ec
         with:
           fail-on-warnings: "true"
 
