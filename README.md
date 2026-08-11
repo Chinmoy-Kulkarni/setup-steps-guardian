@@ -7,9 +7,9 @@
 SetupStepsGuardian is a deterministic validator and read-only fleet assurance service for
 `.github/workflows/copilot-setup-steps.yml`.
 
-> **Launch status:** The GitHub Action is public and installable at `v1.0.0`. The hosted fleet
-> dashboard remains a pre-launch preview until its GitHub App, Cloudflare, Paddle, and legal
-> owner setup is complete. Explore the
+> **Launch status:** The GitHub Action is public and installable at `v1.0.0`. Its pre-production
+> GitHub App is registered privately; external installation, hosted sign-in, and checkout remain
+> disabled until Cloudflare, Paddle, and legal owner setup is complete. Explore the
 > [public product preview](https://chinmoy-kulkarni.github.io/setup-steps-guardian/) and share
 > validation feedback or hosted-dashboard interest in
 > [the launch discussion](https://github.com/Chinmoy-Kulkarni/setup-steps-guardian/discussions/4).

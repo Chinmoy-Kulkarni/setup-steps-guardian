@@ -5,21 +5,25 @@ chat transcripts, or screenshots.
 
 ## GitHub
 
-1. Create or select the GitHub organization that will own the public GitHub App.
-2. Register a public GitHub App without a Marketplace listing.
-3. Set repository permissions to:
+The private pre-production GitHub App is already registered under `@Chinmoy-Kulkarni`:
+
+- Slug: `setupstepsguardian`
+- App ID: `4553889`
+- Client ID: `Iv23liGynO4ziIrxo7gy`
+- Settings: `https://github.com/settings/apps/setupstepsguardian`
+
+It is restricted to the owner account, has no active webhook, and has no generated private key
+or client secret. Complete the remaining setup only after a production HTTPS deployment exists:
+
+1. Keep repository permissions limited to:
    - Metadata: read
    - Contents: read
    - Actions: read
-4. Subscribe to:
-   - `installation`
-   - `installation_repositories`
-   - `push`
-   - `workflow_run`
-5. Enable user authorization and set the callback to
+2. Enable user authorization and set the callback to
    `https://<deployment>/api/auth/github/callback`.
-6. Set the webhook URL to `https://<deployment>/api/webhooks/github`.
-7. Generate a private key and convert it offline from GitHub's PKCS#1 PEM to PKCS#8:
+3. Set the post-installation setup URL to `https://<deployment>/`.
+4. Generate a client secret and store it only as the `GITHUB_CLIENT_SECRET` Cloudflare secret.
+5. Generate a private key and convert it offline from GitHub's PKCS#1 PEM to PKCS#8:
 
    ```bash
    openssl pkcs8 \
@@ -31,7 +35,16 @@ chat transcripts, or screenshots.
      -out github-app-private-key-pkcs8.pem
    ```
 
-8. Store the PKCS#8 value only as the `GITHUB_PRIVATE_KEY_PKCS8` Cloudflare secret.
+6. Store the PKCS#8 value only as the `GITHUB_PRIVATE_KEY_PKCS8` Cloudflare secret.
+7. Generate a webhook secret, store it only as the `GITHUB_WEBHOOK_SECRET` Cloudflare secret,
+   set the webhook URL to `https://<deployment>/api/webhooks/github`, and activate delivery.
+8. Subscribe to:
+   - `installation`
+   - `installation_repositories`
+   - `push`
+   - `workflow_run`
+9. After preview validation, change installation availability from `Only on this account` to
+   `Any account`.
 
 ## Cloudflare
 

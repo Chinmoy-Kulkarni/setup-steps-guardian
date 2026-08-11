@@ -165,7 +165,7 @@ describe("dashboard shell", () => {
     expect(screen.getByText(/Metadata read, Contents read, and Actions read/)).toBeInTheDocument();
     expect(screen.getByRole("link", { name: "Choose repositories on GitHub" })).toHaveAttribute(
       "href",
-      "https://github.com/apps/setup-steps-guardian/installations/new",
+      "https://github.com/apps/setupstepsguardian/installations/new",
     );
     expect(fetchMock).toHaveBeenCalledTimes(1);
   });

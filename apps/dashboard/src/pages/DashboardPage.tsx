@@ -196,7 +196,7 @@ function NoInstalledAccountsState() {
         <div className="state-actions">
           <a
             className="button button-primary"
-            href="https://github.com/apps/setup-steps-guardian/installations/new"
+            href="https://github.com/apps/setupstepsguardian/installations/new"
           >
             Choose repositories on GitHub
           </a>
