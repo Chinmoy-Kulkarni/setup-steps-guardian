@@ -14,6 +14,8 @@ SetupStepsGuardian is a deterministic validator and read-only fleet assurance se
 > validation feedback or hosted-dashboard interest in
 > [the launch discussion](https://github.com/Chinmoy-Kulkarni/setup-steps-guardian/discussions/4).
 
+[![SetupStepsGuardian public product preview](docs/assets/setup-steps-guardian-preview.png)](https://chinmoy-kulkarni.github.io/setup-steps-guardian/)
+
 The working name and `setup-steps-guardian` slug had no exact conflicts in GitHub Marketplace,
 npm, PyPI, or general web searches when development began. This is not legal trademark
 clearance.
