@@ -1,7 +1,15 @@
 # SetupStepsGuardian
 
+[![CI](https://github.com/Chinmoy-Kulkarni/setup-steps-guardian/actions/workflows/ci.yml/badge.svg)](https://github.com/Chinmoy-Kulkarni/setup-steps-guardian/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/Chinmoy-Kulkarni/setup-steps-guardian)](https://github.com/Chinmoy-Kulkarni/setup-steps-guardian/releases/latest)
+[![License](https://img.shields.io/github/license/Chinmoy-Kulkarni/setup-steps-guardian)](LICENSE)
+
 SetupStepsGuardian is a deterministic validator and read-only fleet assurance service for
 `.github/workflows/copilot-setup-steps.yml`.
+
+> **Launch status:** The GitHub Action is public and installable at `v1.0.0`. The hosted fleet
+> dashboard remains a pre-launch preview until its GitHub App, Cloudflare, Paddle, and legal
+> owner setup is complete.
 
 The working name and `setup-steps-guardian` slug had no exact conflicts in GitHub Marketplace,
 npm, PyPI, or general web searches when development began. This is not legal trademark
