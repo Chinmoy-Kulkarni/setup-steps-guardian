@@ -1,0 +1,18 @@
+{
+  "name": "@setup-fleet/policy-engine",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@setup-fleet/contracts": "workspace:*",
+    "yaml": "^2.8.1",
+    "zod": "^4.1.5"
+  }
+}

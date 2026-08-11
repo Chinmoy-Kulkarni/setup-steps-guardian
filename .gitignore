@@ -1,0 +1,17 @@
+.DS_Store
+.dev.vars
+.env
+.env.*
+!.env.example
+github-app-private-key*.pem
+*.private-key.pem
+.wrangler/
+coverage/
+dist/
+!packages/action/dist/
+!packages/action/dist/index.cjs
+node_modules/
+*.db
+*.db-shm
+*.db-wal
+*.log

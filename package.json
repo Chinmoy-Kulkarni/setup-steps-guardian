@@ -1,0 +1,28 @@
+{
+  "name": "setup-steps-guardian",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@11.21.0",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "build": "pnpm --filter @setup-fleet/action build && pnpm --filter @setup-fleet/dashboard build && pnpm --filter @setup-fleet/worker build",
+    "check": "pnpm lint && pnpm typecheck && pnpm test",
+    "clean": "pnpm -r --if-present clean",
+    "dev": "pnpm --parallel --filter @setup-fleet/dashboard --filter @setup-fleet/worker dev",
+    "dev:dashboard": "pnpm --filter @setup-fleet/dashboard dev",
+    "dev:worker": "pnpm --filter @setup-fleet/worker dev",
+    "format": "biome format --write .",
+    "lint": "biome check .",
+    "test": "pnpm -r --if-present test",
+    "typecheck": "pnpm -r --if-present typecheck"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.2.2",
+    "@types/node": "^24.3.0",
+    "typescript": "^5.9.2",
+    "vitest": "^3.2.4"
+  }
+}

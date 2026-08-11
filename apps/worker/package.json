@@ -1,0 +1,24 @@
+{
+  "name": "@setup-fleet/worker",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "wrangler deploy --dry-run",
+    "dev": "wrangler dev",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@setup-fleet/contracts": "workspace:*",
+    "@setup-fleet/data": "workspace:*",
+    "@setup-fleet/github": "workspace:*",
+    "@setup-fleet/policy-engine": "workspace:*",
+    "hono": "^4.9.6",
+    "zod": "^4.1.5"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20260810.1",
+    "wrangler": "^4.120.1"
+  }
+}

@@ -1,0 +1,10 @@
+schemaVersion: 1
+allowedRunners:
+  - ubuntu-latest
+maxTimeoutMinutes: 30
+requireTimeout: true
+requireExplicitPermissions: true
+requireWorkflowDispatch: true
+actionPinning: error
+secretUsage: error
+unsupportedJobKeys: error

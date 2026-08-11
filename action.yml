@@ -1,0 +1,35 @@
+name: "SetupStepsGuardian"
+description: "Validate GitHub Copilot coding-agent setup workflows with deterministic rules."
+author: "SetupStepsGuardian"
+branding:
+  color: "purple"
+  icon: "shield"
+inputs:
+  workflow-path:
+    description: "Path to the Copilot setup workflow."
+    required: false
+    default: ".github/workflows/copilot-setup-steps.yml"
+  policy-path:
+    description: "Optional path to the organization policy YAML."
+    required: false
+    default: ".github/agent-setup-policy.yml"
+  fail-on-warnings:
+    description: "Fail the Action when warning findings exist."
+    required: false
+    default: "false"
+outputs:
+  status:
+    description: "Validation status: valid or invalid."
+  error-count:
+    description: "Number of error findings."
+  warning-count:
+    description: "Number of warning findings."
+  workflow-hash:
+    description: "SHA-256 hash of the setup workflow when present."
+  policy-hash:
+    description: "SHA-256 hash of the effective policy."
+  result-json:
+    description: "Machine-readable validation result."
+runs:
+  using: "node24"
+  main: "packages/action/dist/index.cjs"
