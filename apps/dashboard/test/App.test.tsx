@@ -284,7 +284,7 @@ describe("dashboard shell", () => {
     );
     expect(screen.getByRole("link", { name: "Request early access" })).toHaveAttribute(
       "href",
-      "https://github.com/Chinmoy-Kulkarni/setup-steps-guardian/discussions/4",
+      "https://github.com/Chinmoy-Kulkarni/setup-steps-guardian/discussions/5",
     );
     expect(screen.queryByRole("link", { name: "Sign in with GitHub" })).not.toBeInTheDocument();
     expect(fetchMock).not.toHaveBeenCalled();

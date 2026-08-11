@@ -8,7 +8,7 @@ interface LandingPageProps {
 
 const GITHUB_SIGN_IN_URL = "/api/auth/github?return_to=%2F";
 const ACTION_SETUP_URL = "https://github.com/Chinmoy-Kulkarni/setup-steps-guardian#use-the-action";
-const DISCUSSION_URL = "https://github.com/Chinmoy-Kulkarni/setup-steps-guardian/discussions/4";
+const EARLY_ACCESS_URL = "https://github.com/Chinmoy-Kulkarni/setup-steps-guardian/discussions/5";
 const PRIVACY_URL = "https://github.com/Chinmoy-Kulkarni/setup-steps-guardian/blob/main/PRIVACY.md";
 
 export function LandingPage({ sessionState = "new", publicPreview = false }: LandingPageProps) {
@@ -62,7 +62,7 @@ export function LandingPage({ sessionState = "new", publicPreview = false }: Lan
             </a>
             <a
               className="button button-secondary"
-              href={publicPreview ? DISCUSSION_URL : "#how-it-works"}
+              href={publicPreview ? EARLY_ACCESS_URL : "#how-it-works"}
             >
               {publicPreview ? "Request dashboard access" : "See the 3-step setup"}
             </a>
@@ -198,7 +198,7 @@ export function LandingPage({ sessionState = "new", publicPreview = false }: Lan
           </div>
           <a
             className="button button-primary"
-            href={publicPreview ? DISCUSSION_URL : GITHUB_SIGN_IN_URL}
+            href={publicPreview ? EARLY_ACCESS_URL : GITHUB_SIGN_IN_URL}
           >
             {publicPreview ? "Request early access" : "Start with Free"}
           </a>

@@ -13,6 +13,8 @@ SetupStepsGuardian is a deterministic validator and read-only fleet assurance se
 > [public product preview](https://chinmoy-kulkarni.github.io/setup-steps-guardian/) and share
 > validation feedback or hosted-dashboard interest in
 > [the launch discussion](https://github.com/Chinmoy-Kulkarni/setup-steps-guardian/discussions/4).
+> Teams evaluating the $29 plan can record structured demand in
+> [the early-access discussion](https://github.com/Chinmoy-Kulkarni/setup-steps-guardian/discussions/5).
 
 [![SetupStepsGuardian public product preview](docs/assets/setup-steps-guardian-preview.png)](https://chinmoy-kulkarni.github.io/setup-steps-guardian/)
 
