@@ -30,7 +30,7 @@ export function resolveWorkspacePath(workspace: string, path: string): string {
   return candidate;
 }
 
-export async function readWorkspaceFile(
+async function resolveRegularWorkspaceFile(
   workspace: string,
   path: string,
 ): Promise<string | undefined> {
@@ -52,7 +52,7 @@ export async function readWorkspaceFile(
       throw new Error(`Repository input is not a regular file: ${path}`);
     }
 
-    return await readFile(resolvedCandidate, "utf8");
+    return resolvedCandidate;
   } catch (error) {
     if (error !== null && typeof error === "object" && "code" in error && error.code === "ENOENT") {
       return undefined;
@@ -61,11 +61,19 @@ export async function readWorkspaceFile(
   }
 }
 
+export async function readWorkspaceFile(
+  workspace: string,
+  path: string,
+): Promise<string | undefined> {
+  const resolvedCandidate = await resolveRegularWorkspaceFile(workspace, path);
+  return resolvedCandidate === undefined ? undefined : await readFile(resolvedCandidate, "utf8");
+}
+
 export async function readRepositoryMetadata(workspace: string): Promise<Record<string, string>> {
   const entries = await Promise.all(
     REPOSITORY_METADATA_FILES.map(async (path) => {
-      const content = await readWorkspaceFile(workspace, path);
-      return content === undefined ? undefined : ([path, content] as const);
+      const resolvedCandidate = await resolveRegularWorkspaceFile(workspace, path);
+      return resolvedCandidate === undefined ? undefined : ([path, ""] as const);
     }),
   );
 

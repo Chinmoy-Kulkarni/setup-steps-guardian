@@ -5,15 +5,15 @@ import { describe, expect, it } from "vitest";
 import { readRepositoryMetadata, readWorkspaceFile, resolveWorkspacePath } from "../src/files.js";
 
 describe("workspace file access", () => {
-  it("reads only known repository metadata files", async () => {
+  it("checks only known repository metadata filenames without returning their contents", async () => {
     const workspace = await mkdtemp(join(tmpdir(), "setup-steps-guardian-"));
     await writeFile(join(workspace, "package.json"), "{}");
     await writeFile(join(workspace, "package-lock.json"), "{}");
     await writeFile(join(workspace, "secret.txt"), "do not read");
 
     await expect(readRepositoryMetadata(workspace)).resolves.toEqual({
-      "package.json": "{}",
-      "package-lock.json": "{}",
+      "package.json": "",
+      "package-lock.json": "",
     });
   });
 

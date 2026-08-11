@@ -11,6 +11,7 @@ dist/
 !packages/action/dist/
 !packages/action/dist/index.cjs
 node_modules/
+.research/
 *.db
 *.db-shm
 *.db-wal

@@ -3,8 +3,9 @@
 ## Trust boundary
 
 The GitHub Action runs inside the customer's GitHub Actions runner and reads only the documented
-setup workflow, optional policy, and supported root manifests/lockfiles. The hosted service uses
-a separate read-only GitHub App and never executes repository code.
+setup workflow and optional policy. It checks for supported root manifest/lockfile names without
+reading their contents. The hosted service uses a separate read-only GitHub App and never executes
+repository code.
 
 ## Components
 

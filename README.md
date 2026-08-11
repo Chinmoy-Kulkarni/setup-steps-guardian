@@ -4,35 +4,43 @@
 [![Release](https://img.shields.io/github/v/release/Chinmoy-Kulkarni/setup-steps-guardian)](https://github.com/Chinmoy-Kulkarni/setup-steps-guardian/releases/latest)
 [![License](https://img.shields.io/github/license/Chinmoy-Kulkarni/setup-steps-guardian)](LICENSE)
 
-SetupStepsGuardian is a deterministic validator and read-only fleet assurance service for
+SetupStepsGuardian is an open-source, deterministic validator for
 `.github/workflows/copilot-setup-steps.yml`.
 
-> **Launch status:** The GitHub Action is public and installable at `v1.0.0`. Its pre-production
-> GitHub App is registered privately; external installation, hosted sign-in, and checkout remain
-> disabled until Cloudflare, Paddle, and legal owner setup is complete. Explore the
-> [public product preview](https://chinmoy-kulkarni.github.io/setup-steps-guardian/) and share
-> validation feedback or hosted-dashboard interest in
-> [the launch discussion](https://github.com/Chinmoy-Kulkarni/setup-steps-guardian/discussions/4).
-> Teams evaluating the $29 plan can record structured demand in
-> [the early-access discussion](https://github.com/Chinmoy-Kulkarni/setup-steps-guardian/discussions/5).
+> **Project status:** The GitHub Action is public and installable. The open-source validator,
+> reproducible research scripts, corpus results, and adoption baseline are available now. The
+> hosted dashboard and billing service are deferred until public demand exists.
 
 [![SetupStepsGuardian public product preview](docs/assets/setup-steps-guardian-preview.png)](https://chinmoy-kulkarni.github.io/setup-steps-guardian/)
 
-The working name and `setup-steps-guardian` slug had no exact conflicts in GitHub Marketplace,
-npm, PyPI, or general web searches when development began. This is not legal trademark
-clearance.
+It does not collect Action-run telemetry, send workflow content to a hosted service, or use an LLM.
 
 ## What it checks
 
 - The required `copilot-setup-steps` job exists.
-- The setup job uses documented keys, an approved runner, a bounded timeout, and explicit
-  read-only permissions.
-- Node.js and Python dependency installation matches committed root lockfiles.
-- Action references, secret usage, and manual validation triggers follow the selected policy.
+- The special workflow contains only the documented job.
+- The setup job uses GitHub's documented keys and supported runner architectures.
+- `timeout-minutes`, when present, is a positive integer within GitHub's limit.
+- Node.js and Python runtime or dependency setup is reviewed against committed root lockfiles.
+- Action pinning, secret usage, permissions, triggers, and runner allowlists follow the selected
+  policy.
 - Findings use stable codes and deterministic remediation. No LLM is involved.
 
 SetupStepsGuardian validates the setup workflow. It does not claim that every coding-agent task
 will succeed, and it does not replace code quality, security, or dependency scanning.
+
+## Evidence, without inflated claims
+
+The reproducible census directly observed **873 unique public exact-path workflows** across ten
+GitHub result pages. A 100-workflow convenience sample found **5 human-confirmed contract errors**
+and no fetch or execution failures. At the committed baseline, no public adoption evidence was
+observed in the bounded GitHub metrics: zero stars, forks, subscribers, indexed direct-workflow
+references among the first 100 search items, captured external participants, or confirmed outcomes.
+Those measurements do not prove that adoption is zero.
+
+Read the [evidence, methodology, human review, and limitations](docs/evidence.md). The project
+separates ecosystem need, product adoption, and validator usefulness instead of treating them as
+the same metric.
 
 ## Use the Action
 
@@ -80,6 +88,7 @@ support downstream automation without parsing logs.
 schemaVersion: 1
 allowedRunners:
   - ubuntu-latest
+# Prefix runner groups with "group:", for example group:organization-runners.
 maxTimeoutMinutes: 30
 requireTimeout: true
 requireExplicitPermissions: true
@@ -92,6 +101,13 @@ unsupportedJobKeys: warning
 See [the finding reference](docs/findings.md) for stable codes and remediation.
 Release history is documented in [CHANGELOG.md](CHANGELOG.md).
 
+## Report whether it helped
+
+Use [Discussion #5](https://github.com/Chinmoy-Kulkarni/setup-steps-guardian/discussions/5) to
+report finding codes, whether they were correct, and whether a change improved setup. Do not share
+private source, logs, or secrets. Until reports exist, the project will continue to state that
+user-confirmed usefulness is not yet proven.
+
 ## Development
 
 ```bash
@@ -102,6 +118,9 @@ pnpm build
 
 The project is a TypeScript workspace containing a shared deterministic policy engine, a
 GitHub Action, a Cloudflare Worker API, and a React dashboard.
+
+See [CONTRIBUTING.md](CONTRIBUTING.md), [ROADMAP.md](ROADMAP.md), and
+[GOVERNANCE.md](GOVERNANCE.md).
 
 ## Privacy model
 

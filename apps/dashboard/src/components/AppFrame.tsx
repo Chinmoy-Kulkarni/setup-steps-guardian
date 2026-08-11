@@ -26,8 +26,8 @@ const primaryLinks: ReadonlyArray<PrimaryLink> = [
 
 const previewLinks: ReadonlyArray<PrimaryLink> = [
   { href: PUBLIC_HOME_URL, label: "Overview", page: "dashboard" },
-  { href: `${PUBLIC_HOME_URL}#pricing`, label: "Pricing" },
-  { href: DISCUSSION_URL, label: "Feedback" },
+  { href: `${PUBLIC_HOME_URL}#evidence`, label: "Evidence" },
+  { href: DISCUSSION_URL, label: "Discuss" },
 ];
 
 export function AppFrame({ children, currentPage, publicPreview = false }: AppFrameProps) {
@@ -79,7 +79,11 @@ export function AppFrame({ children, currentPage, publicPreview = false }: AppFr
         <div className="footer-inner">
           <p>
             <strong>SetupStepsGuardian</strong>
-            <span>Read-only assurance for Copilot setup workflows.</span>
+            <span>
+              {publicPreview
+                ? "Open-source validation for Copilot setup workflows."
+                : "Read-only assurance for Copilot setup workflows."}
+            </span>
           </p>
           <nav aria-label="Footer navigation">
             <ul>

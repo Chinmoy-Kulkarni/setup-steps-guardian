@@ -23,7 +23,7 @@
   },
   "vars": {
     "APP_ENV": "local",
-    "APP_VERSION": "1.0.0",
+    "APP_VERSION": "1.0.1",
     "PRODUCT_BASE_URL": "http://localhost:8787",
     "PADDLE_API_BASE_URL": "https://sandbox-api.paddle.com"
   },

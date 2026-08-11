@@ -1,8 +1,8 @@
 blank_issues_enabled: false
 contact_links:
   - name: Security vulnerability
-    url: https://github.com/OWNER/setup-steps-guardian/security/advisories/new
-    about: Use private vulnerability reporting. Replace OWNER before public launch.
+    url: https://github.com/Chinmoy-Kulkarni/setup-steps-guardian/security/advisories/new
+    about: Use private vulnerability reporting.
   - name: Support and data-safety guidance
-    url: https://github.com/OWNER/setup-steps-guardian/blob/main/SUPPORT.md
+    url: https://github.com/Chinmoy-Kulkarni/setup-steps-guardian/blob/main/SUPPORT.md
     about: Review supported requests and data that must not be shared.

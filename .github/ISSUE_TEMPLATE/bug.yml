@@ -23,9 +23,10 @@ body:
       label: Surface
       options:
         - GitHub Action
-        - Fleet dashboard
-        - GitHub App installation
-        - Billing
+        - Policy engine
+        - Public workflow study
+        - Dashboard preview
+        - Worker backend
         - Documentation
     validations:
       required: true

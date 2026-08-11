@@ -28449,6 +28449,38 @@ var ROOT_FILES = {
 };
 var NODE_MANAGERS = /* @__PURE__ */ new Set(["npm", "pnpm", "yarn"]);
 var PYTHON_MANAGERS = /* @__PURE__ */ new Set(["uv", "poetry", "pip"]);
+function commandArguments(runCommands2, command) {
+  const normalizedCommands = runCommands2.replace(/\\\r?\n/g, " ");
+  const expression = new RegExp(`${command.source}(?<arguments>[^;&|\\n]*)`, "g");
+  return Array.from(
+    normalizedCommands.matchAll(expression),
+    (match) => (match.groups?.arguments ?? "").replace(/\s+#.*$/, "")
+  );
+}
+function hasBareYarnInstall(runCommands2) {
+  return runCommands2.replace(/\\\r?\n/g, " ").split(/\r?\n|&&|\|\||[;|]/).map((command) => command.replace(/\s+#.*$/, "").trim()).some((command) => /^(?:[A-Za-z_][A-Za-z0-9_]*=\S+\s+)*(?:corepack\s+)?yarn$/.test(command));
+}
+function hasBooleanFlag(argumentsText, flag) {
+  const escapedFlag = flag.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  return new RegExp(`(?:^|\\s)${escapedFlag}(?=\\s|$)`).test(argumentsText);
+}
+function hasOptionFlag(argumentsText, flag) {
+  const escapedFlag = flag.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  return new RegExp(`(?:^|\\s)${escapedFlag}(?==|\\s|$)`).test(argumentsText);
+}
+function hasDisabledBooleanFlag(argumentsText, flag) {
+  const escapedFlag = flag.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  return new RegExp(`(?:^|\\s)${escapedFlag}=(?:"false"|'false'|false)(?=\\s|$)`).test(
+    argumentsText
+  );
+}
+function hasOptionValue(argumentsText, flag, value) {
+  const escapedFlag = flag.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const escapedValue = value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  return new RegExp(
+    `(?:^|\\s)${escapedFlag}=(?:"${escapedValue}"|'${escapedValue}'|${escapedValue})(?=\\s|$)`
+  ).test(argumentsText);
+}
 function hasFile(files, candidates) {
   return candidates.some((candidate) => Object.hasOwn(files, candidate));
 }
@@ -28498,12 +28530,24 @@ function packageManagerCommandMatches(packageManager, runCommands2) {
   switch (packageManager) {
     case "npm":
       return /\bnpm\s+ci\b/.test(runCommands2);
-    case "pnpm":
-      return /\bpnpm\s+(?:install|i)\b/.test(runCommands2) && /--frozen-lockfile\b/.test(runCommands2);
-    case "yarn":
-      return /\byarn\s+install\b/.test(runCommands2) && /--(?:immutable|frozen-lockfile)\b/.test(runCommands2);
-    case "uv":
-      return /\buv\s+sync\b/.test(runCommands2) && /--frozen\b/.test(runCommands2);
+    case "pnpm": {
+      const invocations = commandArguments(runCommands2, /\bpnpm\s+(?:install|i|bootstrap)\b/);
+      return invocations.length > 0 && invocations.every(
+        (argumentsText) => hasBooleanFlag(argumentsText, "--frozen-lockfile") && !hasBooleanFlag(argumentsText, "--no-frozen-lockfile") && !hasBooleanFlag(argumentsText, "--no-lockfile") && !hasBooleanFlag(argumentsText, "--fix-lockfile") && !hasDisabledBooleanFlag(argumentsText, "--frozen-lockfile") && !hasDisabledBooleanFlag(argumentsText, "--lockfile")
+      );
+    }
+    case "yarn": {
+      const invocations = commandArguments(runCommands2, /\byarn\s+install\b/);
+      return !hasBareYarnInstall(runCommands2) && invocations.length > 0 && invocations.every(
+        (argumentsText) => (hasBooleanFlag(argumentsText, "--immutable") || hasBooleanFlag(argumentsText, "--frozen-lockfile")) && !hasBooleanFlag(argumentsText, "--no-immutable") && !hasBooleanFlag(argumentsText, "--no-frozen-lockfile") && !hasBooleanFlag(argumentsText, "--no-lockfile") && !hasBooleanFlag(argumentsText, "--update-checksums") && !hasDisabledBooleanFlag(argumentsText, "--immutable") && !hasDisabledBooleanFlag(argumentsText, "--frozen-lockfile") && !hasOptionValue(argumentsText, "--mode", "update-lockfile")
+      );
+    }
+    case "uv": {
+      const invocations = commandArguments(runCommands2, /\buv\s+sync\b/);
+      return invocations.length > 0 && invocations.every(
+        (argumentsText) => (hasBooleanFlag(argumentsText, "--frozen") || hasBooleanFlag(argumentsText, "--locked")) && !hasOptionFlag(argumentsText, "--upgrade") && !hasOptionFlag(argumentsText, "--upgrade-package") && !hasBooleanFlag(argumentsText, "-U") && !hasBooleanFlag(argumentsText, "-P") && !hasDisabledBooleanFlag(argumentsText, "--frozen") && !hasDisabledBooleanFlag(argumentsText, "--locked")
+      );
+    }
     case "poetry":
       return /\bpoetry\s+install\b/.test(runCommands2);
     case "pip":
@@ -28511,138 +28555,6 @@ function packageManagerCommandMatches(packageManager, runCommands2) {
         runCommands2
       );
   }
-}
-
-// ../policy-engine/src/generator.ts
-var WORKFLOW_PATH = ".github/workflows/copilot-setup-steps.yml";
-var CHECKOUT_REF = "actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803";
-var SETUP_NODE_REF = "actions/setup-node@820762786026740c76f36085b0efc47a31fe5020";
-var SETUP_PYTHON_REF = "actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1";
-var SETUP_UV_REF = "astral-sh/setup-uv@d0d8abe699bfb85fec6de9f7adb5ae17292296ff";
-function indent(lines, spaces) {
-  const prefix = " ".repeat(spaces);
-  return lines.map((line) => line.length === 0 ? line : `${prefix}${line}`);
-}
-function nodeSteps(packageManager) {
-  if (!["npm", "pnpm", "yarn"].includes(packageManager)) {
-    return [];
-  }
-  const cache = packageManager === "npm" ? "npm" : packageManager;
-  const setup = [
-    "- name: Set up Node.js",
-    `  uses: ${SETUP_NODE_REF}`,
-    "  with:",
-    '    node-version: "24"',
-    `    cache: "${cache}"`
-  ];
-  if (packageManager !== "npm") {
-    setup.push("- name: Enable Corepack", "  run: corepack enable");
-  }
-  setup.push(
-    "- name: Install Node.js dependencies",
-    `  run: ${packageManagerInstallCommand(packageManager)}`
-  );
-  return setup;
-}
-function pythonSteps(packageManager) {
-  if (!["uv", "poetry", "pip"].includes(packageManager)) {
-    return [];
-  }
-  const steps = [
-    "- name: Set up Python",
-    `  uses: ${SETUP_PYTHON_REF}`,
-    "  with:",
-    '    python-version: "3.13"'
-  ];
-  if (packageManager === "uv") {
-    steps.push("- name: Install uv", `  uses: ${SETUP_UV_REF}`);
-  } else if (packageManager === "poetry") {
-    steps.push("- name: Install Poetry", "  run: pipx install poetry");
-  }
-  steps.push(
-    "- name: Install Python dependencies",
-    `  run: ${packageManagerInstallCommand(packageManager)}`
-  );
-  return steps;
-}
-function generateRecommendedWorkflow(policy, packageManagers) {
-  const selectedManagers = packageManagers.filter((manager, index, values) => {
-    const group2 = ["npm", "pnpm", "yarn"].includes(manager) ? "node" : "python";
-    return values.findIndex(
-      (candidate) => group2 === "node" ? ["npm", "pnpm", "yarn"].includes(candidate) : ["uv", "poetry", "pip"].includes(candidate)
-    ) === index;
-  });
-  const setupSteps = selectedManagers.flatMap((manager) => [
-    ...nodeSteps(manager),
-    ...pythonSteps(manager)
-  ]);
-  const steps = ["- name: Checkout repository", `  uses: ${CHECKOUT_REF}`, ...setupSteps];
-  return [
-    'name: "Copilot Setup Steps"',
-    "",
-    "on:",
-    "  workflow_dispatch:",
-    "  push:",
-    "    paths:",
-    `      - "${WORKFLOW_PATH}"`,
-    "      - package.json",
-    "      - package-lock.json",
-    "      - pnpm-lock.yaml",
-    "      - yarn.lock",
-    "      - pyproject.toml",
-    "      - uv.lock",
-    "      - poetry.lock",
-    "      - requirements.txt",
-    "  pull_request:",
-    "    paths:",
-    `      - "${WORKFLOW_PATH}"`,
-    "      - package.json",
-    "      - package-lock.json",
-    "      - pnpm-lock.yaml",
-    "      - yarn.lock",
-    "      - pyproject.toml",
-    "      - uv.lock",
-    "      - poetry.lock",
-    "      - requirements.txt",
-    "",
-    "jobs:",
-    "  copilot-setup-steps:",
-    `    runs-on: ${policy.allowedRunners[0]}`,
-    `    timeout-minutes: ${Math.min(policy.maxTimeoutMinutes, 30)}`,
-    "    permissions:",
-    "      contents: read",
-    "    steps:",
-    ...indent(steps, 6),
-    ""
-  ].join("\n");
-}
-function createMissingWorkflowPatch(policy, packageManagers) {
-  return {
-    path: WORKFLOW_PATH,
-    operation: "create",
-    description: "Create a deterministic Copilot coding-agent setup workflow.",
-    content: generateRecommendedWorkflow(policy, packageManagers)
-  };
-}
-
-// ../policy-engine/src/hash.ts
-function sortValue(value) {
-  if (Array.isArray(value)) {
-    return value.map(sortValue);
-  }
-  if (value !== null && typeof value === "object") {
-    return Object.fromEntries(
-      Object.entries(value).sort(([left], [right]) => left.localeCompare(right)).map(([key, child2]) => [key, sortValue(child2)])
-    );
-  }
-  return value;
-}
-function stableStringify(value) {
-  return JSON.stringify(sortValue(value));
-}
-async function sha256(value) {
-  const digest = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(value));
-  return Array.from(new Uint8Array(digest), (byte) => byte.toString(16).padStart(2, "0")).join("");
 }
 
 // ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/external.js
@@ -43161,20 +43073,168 @@ config(en_default());
 
 // ../policy-engine/src/policy.ts
 var ConfigurableSeveritySchema = external_exports.enum(["off", "warning", "error"]);
+var RUNNER_GROUP_PREFIX = "group:";
+var AllowedRunnerSchema = external_exports.string().trim().min(1).refine(
+  (entry) => !entry.startsWith(RUNNER_GROUP_PREFIX) || entry.length > RUNNER_GROUP_PREFIX.length,
+  `Runner groups must use ${RUNNER_GROUP_PREFIX}<name>.`
+);
 var PolicySchema = external_exports.object({
   schemaVersion: external_exports.literal(1).default(1),
-  allowedRunners: external_exports.array(external_exports.string().min(1)).min(1).default(["ubuntu-latest", "windows-latest"]),
+  allowedRunners: external_exports.array(AllowedRunnerSchema).min(1).default(["*"]),
   maxTimeoutMinutes: external_exports.number().int().min(1).max(59).default(59),
-  requireTimeout: external_exports.boolean().default(true),
-  requireExplicitPermissions: external_exports.boolean().default(true),
-  requireWorkflowDispatch: external_exports.boolean().default(true),
+  requireTimeout: external_exports.boolean().default(false),
+  requireExplicitPermissions: external_exports.boolean().default(false),
+  requireWorkflowDispatch: external_exports.boolean().default(false),
   actionPinning: ConfigurableSeveritySchema.default("warning"),
   secretUsage: ConfigurableSeveritySchema.default("warning"),
   unsupportedJobKeys: ConfigurableSeveritySchema.default("warning")
 }).strict();
 var DEFAULT_POLICY = PolicySchema.parse({});
+function parseAllowedRunnerEntry(entry) {
+  return entry.startsWith(RUNNER_GROUP_PREFIX) ? { kind: "group", value: entry.slice(RUNNER_GROUP_PREFIX.length) } : { kind: "label", value: entry };
+}
 function parsePolicy(value) {
   return PolicySchema.parse(value);
+}
+
+// ../policy-engine/src/generator.ts
+var WORKFLOW_PATH = ".github/workflows/copilot-setup-steps.yml";
+var CHECKOUT_REF = "actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803";
+var SETUP_NODE_REF = "actions/setup-node@820762786026740c76f36085b0efc47a31fe5020";
+var SETUP_PYTHON_REF = "actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1";
+var SETUP_UV_REF = "astral-sh/setup-uv@d0d8abe699bfb85fec6de9f7adb5ae17292296ff";
+function indent(lines, spaces) {
+  const prefix = " ".repeat(spaces);
+  return lines.map((line) => line.length === 0 ? line : `${prefix}${line}`);
+}
+function nodeSteps(packageManager) {
+  if (!["npm", "pnpm", "yarn"].includes(packageManager)) {
+    return [];
+  }
+  const cache = packageManager === "npm" ? "npm" : packageManager;
+  const setup = [
+    "- name: Set up Node.js",
+    `  uses: ${SETUP_NODE_REF}`,
+    "  with:",
+    '    node-version: "24"',
+    `    cache: "${cache}"`
+  ];
+  if (packageManager !== "npm") {
+    setup.push("- name: Enable Corepack", "  run: corepack enable");
+  }
+  setup.push(
+    "- name: Install Node.js dependencies",
+    `  run: ${packageManagerInstallCommand(packageManager)}`
+  );
+  return setup;
+}
+function pythonSteps(packageManager) {
+  if (!["uv", "poetry", "pip"].includes(packageManager)) {
+    return [];
+  }
+  const steps = [
+    "- name: Set up Python",
+    `  uses: ${SETUP_PYTHON_REF}`,
+    "  with:",
+    '    python-version: "3.13"'
+  ];
+  if (packageManager === "uv") {
+    steps.push("- name: Install uv", `  uses: ${SETUP_UV_REF}`);
+  } else if (packageManager === "poetry") {
+    steps.push("- name: Install Poetry", "  run: pipx install poetry");
+  }
+  steps.push(
+    "- name: Install Python dependencies",
+    `  run: ${packageManagerInstallCommand(packageManager)}`
+  );
+  return steps;
+}
+function runnerLines(policy) {
+  const entry = policy.allowedRunners.find((runner) => runner !== "*");
+  if (entry === void 0) {
+    return ["    runs-on: ubuntu-latest"];
+  }
+  const selection = parseAllowedRunnerEntry(entry);
+  return selection.kind === "group" ? ["    runs-on:", `      group: ${JSON.stringify(selection.value)}`] : [`    runs-on: ${JSON.stringify(selection.value)}`];
+}
+function generateRecommendedWorkflow(policy, packageManagers) {
+  const selectedManagers = packageManagers.filter((manager, index, values) => {
+    const group2 = ["npm", "pnpm", "yarn"].includes(manager) ? "node" : "python";
+    return values.findIndex(
+      (candidate) => group2 === "node" ? ["npm", "pnpm", "yarn"].includes(candidate) : ["uv", "poetry", "pip"].includes(candidate)
+    ) === index;
+  });
+  const setupSteps = selectedManagers.flatMap((manager) => [
+    ...nodeSteps(manager),
+    ...pythonSteps(manager)
+  ]);
+  const steps = ["- name: Checkout repository", `  uses: ${CHECKOUT_REF}`, ...setupSteps];
+  return [
+    'name: "Copilot Setup Steps"',
+    "",
+    "on:",
+    "  workflow_dispatch:",
+    "  push:",
+    "    paths:",
+    `      - "${WORKFLOW_PATH}"`,
+    "      - package.json",
+    "      - package-lock.json",
+    "      - pnpm-lock.yaml",
+    "      - yarn.lock",
+    "      - pyproject.toml",
+    "      - uv.lock",
+    "      - poetry.lock",
+    "      - requirements.txt",
+    "  pull_request:",
+    "    paths:",
+    `      - "${WORKFLOW_PATH}"`,
+    "      - package.json",
+    "      - package-lock.json",
+    "      - pnpm-lock.yaml",
+    "      - yarn.lock",
+    "      - pyproject.toml",
+    "      - uv.lock",
+    "      - poetry.lock",
+    "      - requirements.txt",
+    "",
+    "jobs:",
+    "  copilot-setup-steps:",
+    ...runnerLines(policy),
+    `    timeout-minutes: ${Math.min(policy.maxTimeoutMinutes, 30)}`,
+    "    permissions:",
+    "      contents: read",
+    "    steps:",
+    ...indent(steps, 6),
+    ""
+  ].join("\n");
+}
+function createMissingWorkflowPatch(policy, packageManagers) {
+  return {
+    path: WORKFLOW_PATH,
+    operation: "create",
+    description: "Create a deterministic Copilot coding-agent setup workflow.",
+    content: generateRecommendedWorkflow(policy, packageManagers)
+  };
+}
+
+// ../policy-engine/src/hash.ts
+function sortValue(value) {
+  if (Array.isArray(value)) {
+    return value.map(sortValue);
+  }
+  if (value !== null && typeof value === "object") {
+    return Object.fromEntries(
+      Object.entries(value).sort(([left], [right]) => left.localeCompare(right)).map(([key, child2]) => [key, sortValue(child2)])
+    );
+  }
+  return value;
+}
+function stableStringify(value) {
+  return JSON.stringify(sortValue(value));
+}
+async function sha256(value) {
+  const digest = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(value));
+  return Array.from(new Uint8Array(digest), (byte) => byte.toString(16).padStart(2, "0")).join("");
 }
 
 // ../policy-engine/src/yaml.ts
@@ -43260,6 +43320,58 @@ function hasWorkflowDispatch(trigger) {
   }
   return isRecord(trigger) && Object.hasOwn(trigger, "workflow_dispatch");
 }
+function runnerSelection(value) {
+  if (typeof value === "string") {
+    return value.trim().length === 0 ? void 0 : { labels: [value], architectureLabels: [value] };
+  }
+  if (Array.isArray(value)) {
+    if (value.length === 0 || !value.every((entry) => typeof entry === "string" && entry.trim().length > 0)) {
+      return void 0;
+    }
+    return { labels: value, architectureLabels: value };
+  }
+  if (!isRecord(value)) {
+    return void 0;
+  }
+  let group2;
+  const labels = [];
+  const architectureLabels = [];
+  if (value.group !== void 0) {
+    if (typeof value.group !== "string" || value.group.trim().length === 0) {
+      return void 0;
+    }
+    group2 = value.group;
+  }
+  if (value.labels !== void 0) {
+    if (typeof value.labels === "string" && value.labels.trim().length > 0) {
+      labels.push(value.labels);
+      architectureLabels.push(value.labels);
+    } else if (Array.isArray(value.labels) && value.labels.length > 0 && value.labels.every((label) => typeof label === "string" && label.trim().length > 0)) {
+      labels.push(...value.labels);
+      architectureLabels.push(...value.labels);
+    } else {
+      return void 0;
+    }
+  }
+  return group2 === void 0 && labels.length === 0 ? void 0 : { ...group2 === void 0 ? {} : { group: group2 }, labels, architectureLabels };
+}
+function unsupportedRunner(labels) {
+  return labels.find((label) => {
+    const normalized = label.toLowerCase();
+    return normalized === "macos" || normalized.startsWith("macos-") || normalized.includes("arm64") || normalized.includes("aarch64") || /(?:^|-)arm(?:-|$)/.test(normalized);
+  });
+}
+function runnerAllowed(selection, policy) {
+  if (policy.allowedRunners.includes("*")) {
+    return true;
+  }
+  const allowedEntries = policy.allowedRunners.map(parseAllowedRunnerEntry);
+  const groupAllowed = selection.group === void 0 || allowedEntries.some((entry) => entry.kind === "group" && entry.value === selection.group);
+  const labelsAllowed = selection.labels.every(
+    (label) => allowedEntries.some((entry) => entry.kind === "label" && entry.value === label)
+  );
+  return groupAllowed && labelsAllowed;
+}
 function isExplicitReadOnlyPermissions(value) {
   if (!isRecord(value)) {
     return false;
@@ -43277,12 +43389,27 @@ function stepName(step, index) {
   return typeof step.name === "string" && step.name.length > 0 ? step.name : `Step ${index + 1}`;
 }
 function runCommands(steps) {
-  return steps.map((step) => typeof step.run === "string" ? step.run : "").filter((command) => command.length > 0).join("\n");
+  return steps.flatMap((step) => {
+    const commands = [];
+    if (typeof step.run === "string") {
+      commands.push(step.run);
+    }
+    if (isRecord(step.with) && typeof step.with.command === "string") {
+      commands.push(step.with.command);
+    }
+    return commands;
+  }).filter((command) => command.length > 0).join("\n");
 }
 function hasAction(steps, action) {
   return steps.some(
     (step) => typeof step.uses === "string" && step.uses.toLowerCase().startsWith(`${action}@`)
   );
+}
+function hasDependencyInstallAction(steps, packageManager) {
+  if (!["npm", "pnpm", "yarn"].includes(packageManager)) {
+    return false;
+  }
+  return hasAction(steps, "bahmutov/npm-install");
 }
 function validateJob(workflow, policy, files, path6) {
   const findings = [];
@@ -43314,6 +43441,21 @@ function validateJob(workflow, policy, files, path6) {
       })
     ];
   }
+  const additionalJobs = Object.keys(jobs).filter((jobName) => jobName !== "copilot-setup-steps");
+  for (const jobName of additionalJobs) {
+    findings.push(
+      finding({
+        code: "ADDITIONAL_JOB",
+        severity: "error",
+        title: "Setup workflow contains an additional job",
+        message: `GitHub documents this special workflow as a single copilot-setup-steps job, but found "${jobName}".`,
+        path: path6,
+        evidence: { job: jobName },
+        remediation: `Remove "${jobName}" or move its steps into copilot-setup-steps.`,
+        documentationUrl: SETUP_DOCS
+      })
+    );
+  }
   const unsupportedSeverity = configuredSeverity(policy.unsupportedJobKeys);
   if (unsupportedSeverity !== void 0) {
     for (const key of Object.keys(setupJob)) {
@@ -43333,31 +43475,49 @@ function validateJob(workflow, policy, files, path6) {
       }
     }
   }
-  if (typeof setupJob["runs-on"] !== "string") {
+  const selectedRunner = runnerSelection(setupJob["runs-on"]);
+  const runnerRestrictionsEnabled = !policy.allowedRunners.includes("*");
+  if (selectedRunner === void 0) {
     findings.push(
       finding({
         code: "RUNNER_MISSING",
         severity: "error",
-        title: "Runner label is missing",
-        message: "The setup job must select a supported runner.",
+        title: "Runner selection is missing or invalid",
+        message: "The setup job must select a valid GitHub Actions runner.",
         path: path6,
-        remediation: `Set runs-on to one of: ${policy.allowedRunners.join(", ")}.`,
+        remediation: runnerRestrictionsEnabled ? `Set runs-on using only: ${policy.allowedRunners.join(", ")}.` : "Set runs-on to a supported GitHub Actions runner label, label array, or group.",
         documentationUrl: SETUP_DOCS
       })
     );
-  } else if (!policy.allowedRunners.includes(setupJob["runs-on"])) {
-    findings.push(
-      finding({
-        code: "RUNNER_NOT_ALLOWED",
-        severity: "error",
-        title: "Runner is outside the organization policy",
-        message: `Runner "${setupJob["runs-on"]}" is not approved.`,
-        path: path6,
-        evidence: { runner: setupJob["runs-on"] },
-        remediation: `Use one of: ${policy.allowedRunners.join(", ")}.`,
-        documentationUrl: SETUP_DOCS
-      })
-    );
+  } else {
+    const unsupportedLabel = unsupportedRunner(selectedRunner.architectureLabels);
+    if (unsupportedLabel !== void 0) {
+      findings.push(
+        finding({
+          code: "RUNNER_UNSUPPORTED",
+          severity: "error",
+          title: "Runner is unsupported by Copilot cloud agent",
+          message: `GitHub documents only Ubuntu x64 and Windows x64 runners, but the selection includes "${unsupportedLabel}".`,
+          path: path6,
+          evidence: { runner: JSON.stringify(setupJob["runs-on"]) },
+          remediation: "Use an Ubuntu x64 or Windows x64 runner label or runner group.",
+          documentationUrl: SETUP_DOCS
+        })
+      );
+    } else if (runnerRestrictionsEnabled && !runnerAllowed(selectedRunner, policy)) {
+      findings.push(
+        finding({
+          code: "RUNNER_NOT_ALLOWED",
+          severity: "error",
+          title: "Runner is outside the organization policy",
+          message: `Runner selection ${JSON.stringify(setupJob["runs-on"])} is not approved.`,
+          path: path6,
+          evidence: { runner: JSON.stringify(setupJob["runs-on"]) },
+          remediation: `Use only approved runner labels or groups: ${policy.allowedRunners.join(", ")}.`,
+          documentationUrl: SETUP_DOCS
+        })
+      );
+    }
   }
   const timeout = setupJob["timeout-minutes"];
   if (timeout === void 0 && policy.requireTimeout) {
@@ -43504,9 +43664,9 @@ function validateJob(workflow, policy, files, path6) {
     findings.push(
       finding({
         code: "NODE_SETUP_MISSING",
-        severity: "error",
+        severity: "warning",
         title: "Node.js runtime setup is missing",
-        message: "A Node.js lockfile exists but actions/setup-node is not used.",
+        message: "A Node.js lockfile exists but actions/setup-node is not used, so the runtime version may depend on the runner image.",
         path: path6,
         remediation: "Add actions/setup-node before installing Node.js dependencies."
       })
@@ -43516,25 +43676,25 @@ function validateJob(workflow, policy, files, path6) {
     findings.push(
       finding({
         code: "PYTHON_SETUP_MISSING",
-        severity: "error",
+        severity: "warning",
         title: "Python runtime setup is missing",
-        message: "A Python lockfile exists but actions/setup-python is not used.",
+        message: "A Python lockfile exists but actions/setup-python is not used, so the runtime version may depend on the runner image.",
         path: path6,
         remediation: "Add actions/setup-python before installing Python dependencies."
       })
     );
   }
   for (const packageManager of detection.packageManagers) {
-    if (!packageManagerCommandMatches(packageManager, commands)) {
+    if (!packageManagerCommandMatches(packageManager, commands) && !hasDependencyInstallAction(steps, packageManager)) {
       findings.push(
         finding({
           code: "INSTALL_COMMAND_MISMATCH",
-          severity: "error",
-          title: "Deterministic install command is missing",
-          message: `The workflow does not use the expected locked install for ${packageManager}.`,
+          severity: "warning",
+          title: "Explicitly lock-protected dependency install was not detected",
+          message: `A ${packageManager} lockfile exists, but the workflow does not contain a recognized ${packageManager} install with explicit lockfile protection.`,
           path: path6,
           evidence: { packageManager },
-          remediation: `Use the documented deterministic install command for ${packageManager}.`
+          remediation: `If the coding agent needs these dependencies, add the recommended lock-protected install command for ${packageManager}.`
         })
       );
     }
@@ -43685,7 +43845,7 @@ function resolveWorkspacePath(workspace, path6) {
   }
   return candidate;
 }
-async function readWorkspaceFile(workspace, path6) {
+async function resolveRegularWorkspaceFile(workspace, path6) {
   const resolvedWorkspace = await (0, import_promises.realpath)(workspace);
   const candidate = resolveWorkspacePath(resolvedWorkspace, path6);
   try {
@@ -43700,7 +43860,7 @@ async function readWorkspaceFile(workspace, path6) {
     if (!metadata.isFile()) {
       throw new Error(`Repository input is not a regular file: ${path6}`);
     }
-    return await (0, import_promises.readFile)(resolvedCandidate, "utf8");
+    return resolvedCandidate;
   } catch (error52) {
     if (error52 !== null && typeof error52 === "object" && "code" in error52 && error52.code === "ENOENT") {
       return void 0;
@@ -43708,11 +43868,15 @@ async function readWorkspaceFile(workspace, path6) {
     throw error52;
   }
 }
+async function readWorkspaceFile(workspace, path6) {
+  const resolvedCandidate = await resolveRegularWorkspaceFile(workspace, path6);
+  return resolvedCandidate === void 0 ? void 0 : await (0, import_promises.readFile)(resolvedCandidate, "utf8");
+}
 async function readRepositoryMetadata(workspace) {
   const entries = await Promise.all(
     REPOSITORY_METADATA_FILES.map(async (path6) => {
-      const content = await readWorkspaceFile(workspace, path6);
-      return content === void 0 ? void 0 : [path6, content];
+      const resolvedCandidate = await resolveRegularWorkspaceFile(workspace, path6);
+      return resolvedCandidate === void 0 ? void 0 : [path6, ""];
     })
   );
   return Object.fromEntries(entries.filter((entry) => entry !== void 0));

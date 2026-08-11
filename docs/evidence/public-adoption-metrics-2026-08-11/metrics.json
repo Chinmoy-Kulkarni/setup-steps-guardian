@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-11T05:36:56.855Z",
+  "repository": {
+    "fullName": "Chinmoy-Kulkarni/setup-steps-guardian",
+    "url": "https://github.com/Chinmoy-Kulkarni/setup-steps-guardian",
+    "createdAt": "2026-08-11T02:43:07Z",
+    "pushedAt": "2026-08-11T03:18:56Z",
+    "stars": 0,
+    "forks": 0,
+    "subscribers": 0
+  },
+  "actionReferences": {
+    "query": "\"Chinmoy-Kulkarni/setup-steps-guardian@\" path:.github/workflows -repo:Chinmoy-Kulkarni/setup-steps-guardian",
+    "observedPublicCount": 0,
+    "searchPageSize": 100,
+    "incompleteResults": false,
+    "items": []
+  },
+  "participation": {
+    "discussions": 2,
+    "externalDiscussionAuthorsOrCommenters": [],
+    "usefulnessDiscussionExternalComments": 0,
+    "issues": 0,
+    "externalIssueAuthors": [],
+    "pullRequests": 3,
+    "externalPullRequestAuthors": []
+  },
+  "traffic": {
+    "window": "GitHub rolling 14-day traffic window",
+    "views": {
+      "available": true,
+      "count": 0,
+      "uniques": 0
+    },
+    "clones": {
+      "available": true,
+      "count": 0,
+      "uniques": 0
+    }
+  },
+  "limitations": [
+    "GitHub code search covers public indexed code and can lag behind repository changes.",
+    "Action-reference counts include only direct-child .yml or .yaml workflow files observed among the first 100 search items.",
+    "Traffic includes maintainer activity and is awareness evidence, not product adoption.",
+    "Participation counts include only the first 100 records or comments in each queried connection.",
+    "Discussion comments require human review before they can count as confirmed usefulness.",
+    "No Action-run telemetry is collected."
+  ]
+}

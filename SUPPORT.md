@@ -1,11 +1,14 @@
 # Support
 
-SetupStepsGuardian is a self-service product with no service-level agreement.
+SetupStepsGuardian is an open-source project with no service-level agreement.
 
-- Product and Action defects: use a GitHub issue with the provided template.
+- Reproducible defects: use the provided GitHub issue template.
+- Feature proposals: use the feature-request template.
+- Finding accuracy and usefulness reports: use
+  [Discussion #5](https://github.com/Chinmoy-Kulkarni/setup-steps-guardian/discussions/5).
 - Security reports: use private vulnerability reporting, not a public issue.
-- Billing changes: use the self-service billing portal.
-- GitHub installation changes: use GitHub's App installation settings.
 
 Do not attach source code, logs, tokens, webhook payloads, secrets, or payment details to support
-requests. A monitored support contact must be configured by the owner before public launch.
+requests. Use a minimal public fixture or only the finding codes and redacted outcome.
+
+The hosted dashboard and billing service are not available for external use.

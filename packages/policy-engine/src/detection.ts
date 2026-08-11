@@ -30,6 +30,47 @@ const ROOT_FILES = {
 const NODE_MANAGERS = new Set<PackageManager>(["npm", "pnpm", "yarn"]);
 const PYTHON_MANAGERS = new Set<PackageManager>(["uv", "poetry", "pip"]);
 
+function commandArguments(runCommands: string, command: RegExp): readonly string[] {
+  const normalizedCommands = runCommands.replace(/\\\r?\n/g, " ");
+  const expression = new RegExp(`${command.source}(?<arguments>[^;&|\\n]*)`, "g");
+  return Array.from(normalizedCommands.matchAll(expression), (match) =>
+    (match.groups?.arguments ?? "").replace(/\s+#.*$/, ""),
+  );
+}
+
+function hasBareYarnInstall(runCommands: string): boolean {
+  return runCommands
+    .replace(/\\\r?\n/g, " ")
+    .split(/\r?\n|&&|\|\||[;|]/)
+    .map((command) => command.replace(/\s+#.*$/, "").trim())
+    .some((command) => /^(?:[A-Za-z_][A-Za-z0-9_]*=\S+\s+)*(?:corepack\s+)?yarn$/.test(command));
+}
+
+function hasBooleanFlag(argumentsText: string, flag: string): boolean {
+  const escapedFlag = flag.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  return new RegExp(`(?:^|\\s)${escapedFlag}(?=\\s|$)`).test(argumentsText);
+}
+
+function hasOptionFlag(argumentsText: string, flag: string): boolean {
+  const escapedFlag = flag.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  return new RegExp(`(?:^|\\s)${escapedFlag}(?==|\\s|$)`).test(argumentsText);
+}
+
+function hasDisabledBooleanFlag(argumentsText: string, flag: string): boolean {
+  const escapedFlag = flag.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  return new RegExp(`(?:^|\\s)${escapedFlag}=(?:"false"|'false'|false)(?=\\s|$)`).test(
+    argumentsText,
+  );
+}
+
+function hasOptionValue(argumentsText: string, flag: string, value: string): boolean {
+  const escapedFlag = flag.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const escapedValue = value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  return new RegExp(
+    `(?:^|\\s)${escapedFlag}=(?:"${escapedValue}"|'${escapedValue}'|${escapedValue})(?=\\s|$)`,
+  ).test(argumentsText);
+}
+
 function hasFile(files: Readonly<Record<string, string>>, candidates: readonly string[]): boolean {
   return candidates.some((candidate) => Object.hasOwn(files, candidate));
 }
@@ -89,17 +130,57 @@ export function packageManagerCommandMatches(
   switch (packageManager) {
     case "npm":
       return /\bnpm\s+ci\b/.test(runCommands);
-    case "pnpm":
+    case "pnpm": {
+      const invocations = commandArguments(runCommands, /\bpnpm\s+(?:install|i|bootstrap)\b/);
       return (
-        /\bpnpm\s+(?:install|i)\b/.test(runCommands) && /--frozen-lockfile\b/.test(runCommands)
+        invocations.length > 0 &&
+        invocations.every(
+          (argumentsText) =>
+            hasBooleanFlag(argumentsText, "--frozen-lockfile") &&
+            !hasBooleanFlag(argumentsText, "--no-frozen-lockfile") &&
+            !hasBooleanFlag(argumentsText, "--no-lockfile") &&
+            !hasBooleanFlag(argumentsText, "--fix-lockfile") &&
+            !hasDisabledBooleanFlag(argumentsText, "--frozen-lockfile") &&
+            !hasDisabledBooleanFlag(argumentsText, "--lockfile"),
+        )
       );
-    case "yarn":
+    }
+    case "yarn": {
+      const invocations = commandArguments(runCommands, /\byarn\s+install\b/);
       return (
-        /\byarn\s+install\b/.test(runCommands) &&
-        /--(?:immutable|frozen-lockfile)\b/.test(runCommands)
+        !hasBareYarnInstall(runCommands) &&
+        invocations.length > 0 &&
+        invocations.every(
+          (argumentsText) =>
+            (hasBooleanFlag(argumentsText, "--immutable") ||
+              hasBooleanFlag(argumentsText, "--frozen-lockfile")) &&
+            !hasBooleanFlag(argumentsText, "--no-immutable") &&
+            !hasBooleanFlag(argumentsText, "--no-frozen-lockfile") &&
+            !hasBooleanFlag(argumentsText, "--no-lockfile") &&
+            !hasBooleanFlag(argumentsText, "--update-checksums") &&
+            !hasDisabledBooleanFlag(argumentsText, "--immutable") &&
+            !hasDisabledBooleanFlag(argumentsText, "--frozen-lockfile") &&
+            !hasOptionValue(argumentsText, "--mode", "update-lockfile"),
+        )
       );
-    case "uv":
-      return /\buv\s+sync\b/.test(runCommands) && /--frozen\b/.test(runCommands);
+    }
+    case "uv": {
+      const invocations = commandArguments(runCommands, /\buv\s+sync\b/);
+      return (
+        invocations.length > 0 &&
+        invocations.every(
+          (argumentsText) =>
+            (hasBooleanFlag(argumentsText, "--frozen") ||
+              hasBooleanFlag(argumentsText, "--locked")) &&
+            !hasOptionFlag(argumentsText, "--upgrade") &&
+            !hasOptionFlag(argumentsText, "--upgrade-package") &&
+            !hasBooleanFlag(argumentsText, "-U") &&
+            !hasBooleanFlag(argumentsText, "-P") &&
+            !hasDisabledBooleanFlag(argumentsText, "--frozen") &&
+            !hasDisabledBooleanFlag(argumentsText, "--locked"),
+        )
+      );
+    }
     case "poetry":
       return /\bpoetry\s+install\b/.test(runCommands);
     case "pip":

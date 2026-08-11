@@ -1,0 +1,39 @@
+name: Feature request
+description: Propose a focused improvement backed by a setup-workflow use case.
+title: "[feature] "
+labels:
+  - enhancement
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Setup-workflow problem
+      description: What deterministic validation or open-source workflow is missing?
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Public evidence
+      description: Link current GitHub documentation or a minimal public example.
+    validations:
+      required: true
+
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Expected outcome
+      description: Describe the finding, output, or contributor experience you expect.
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: boundaries
+    attributes:
+      label: Project boundaries
+      options:
+        - label: This can be implemented deterministically without an LLM.
+          required: true
+        - label: I did not include private source, logs, credentials, tokens, or secrets.
+          required: true

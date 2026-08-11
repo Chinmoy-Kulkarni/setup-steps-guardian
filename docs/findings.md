@@ -11,9 +11,11 @@ policy-configurable rules.
 | `WORKFLOW_DISPATCH_MISSING` | Error | The workflow cannot be manually validated. | Add `workflow_dispatch`. |
 | `JOBS_MISSING` | Error | No jobs mapping exists. | Add `jobs` and the required setup job. |
 | `SETUP_JOB_MISSING` | Error | The exact `copilot-setup-steps` job is absent. | Rename or add the required job. |
+| `ADDITIONAL_JOB` | Error | The special setup workflow contains another job even though GitHub documents a single-job contract. | Move the required steps into `copilot-setup-steps` and remove the other job. |
 | `UNSUPPORTED_JOB_KEY` | Warning | The special job uses a key GitHub does not document as supported. | Move the behavior into a supported step or remove it. |
-| `RUNNER_MISSING` | Error | The special job has no runner. | Select an allowed runner. |
-| `RUNNER_NOT_ALLOWED` | Error | The runner violates organization policy. | Use an approved runner label. |
+| `RUNNER_MISSING` | Error | The special job has no valid runner label, label array, or runner group. | Select a supported runner. |
+| `RUNNER_UNSUPPORTED` | Error | The workflow explicitly selects a macOS or ARM runner, which Copilot cloud agent does not support. | Use an Ubuntu x64 or Windows x64 runner. |
+| `RUNNER_NOT_ALLOWED` | Error | The runner violates organization policy. | Use an approved runner label, or prefix an approved runner group with `group:` in policy. |
 | `TIMEOUT_MISSING` | Error | The setup job has no bounded timeout. | Add `timeout-minutes`. |
 | `TIMEOUT_INVALID` | Error | The timeout is not a positive integer. | Use a positive integer. |
 | `TIMEOUT_EXCEEDS_LIMIT` | Error | The timeout exceeds the effective policy. | Reduce it to the configured maximum. |
@@ -23,9 +25,9 @@ policy-configurable rules.
 | `SECRET_REFERENCE` | Warning | A setup step references the `secrets` context. | Remove it or document the unavoidable requirement. |
 | `LOCKFILE_AMBIGUOUS` | Error | Multiple root lockfiles exist for one ecosystem. | Keep one authoritative root lockfile. |
 | `LOCKFILE_MISSING` | Warning | A supported manifest exists without a root lockfile. | Commit the package manager lockfile. |
-| `NODE_SETUP_MISSING` | Error | A Node.js lockfile exists without `actions/setup-node`. | Add runtime setup before installation. |
-| `PYTHON_SETUP_MISSING` | Error | A Python lockfile exists without `actions/setup-python`. | Add runtime setup before installation. |
-| `INSTALL_COMMAND_MISMATCH` | Error | The workflow does not use the locked install command for the detected package manager. | Use the deterministic command shown by the Action. |
+| `NODE_SETUP_MISSING` | Warning | A Node.js lockfile exists without an explicit `actions/setup-node` runtime selection. | Add runtime setup before installation if Node dependencies are needed. |
+| `PYTHON_SETUP_MISSING` | Warning | A Python lockfile exists without an explicit `actions/setup-python` runtime selection. | Add runtime setup before installation if Python dependencies are needed. |
+| `INSTALL_COMMAND_MISMATCH` | Warning | A root lockfile exists but no recognized install with explicit lockfile protection was detected. | Add the recommended lock-protected command if those dependencies are needed. |
 | `POLICY_INVALID` | Error | The policy YAML or schema is invalid. | Correct YAML and remove unsupported keys. |
 
 The authoritative behavior is the tested implementation in `packages/policy-engine`.

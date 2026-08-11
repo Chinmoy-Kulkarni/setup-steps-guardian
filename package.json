@@ -1,6 +1,6 @@
 {
   "name": "setup-steps-guardian",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "type": "module",
   "packageManager": "pnpm@11.21.0",
@@ -16,7 +16,7 @@
     "dev:worker": "pnpm --filter @setup-fleet/worker dev",
     "format": "biome format --write .",
     "lint": "biome check .",
-    "test": "pnpm -r --if-present test",
+    "test": "node --test scripts/*.test.mjs && pnpm -r --if-present test",
     "typecheck": "pnpm -r --if-present typecheck"
   },
   "devDependencies": {

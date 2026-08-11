@@ -275,17 +275,34 @@ describe("dashboard shell", () => {
 
     render(<App publicPreview />);
 
-    expect(
-      screen.getByText("The GitHub Action is live; the hosted dashboard is pre-launch."),
-    ).toBeInTheDocument();
+    expect(document.title).toBe("SetupStepsGuardian | Open-source Copilot setup validation");
+    expect(screen.getByText("The Action and its evidence are public.")).toBeInTheDocument();
     expect(screen.getByRole("link", { name: "Install the GitHub Action" })).toHaveAttribute(
       "href",
       "https://github.com/Chinmoy-Kulkarni/setup-steps-guardian#use-the-action",
     );
-    expect(screen.getByRole("link", { name: "Request early access" })).toHaveAttribute(
+    expect(screen.getByRole("link", { name: "Review the public evidence" })).toHaveAttribute(
+      "href",
+      "https://github.com/Chinmoy-Kulkarni/setup-steps-guardian/blob/main/docs/evidence.md",
+    );
+    expect(
+      screen.getByRole("heading", { name: "Three numbers, three different claims" }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText("873 public exact-path workflows directly observed"),
+    ).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "0 confirmed reports" })).toBeInTheDocument();
+    expect(
+      screen.getByRole("heading", { name: "Runs in your repository, sends nothing back" }),
+    ).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "Report a validation outcome" })).toHaveAttribute(
       "href",
       "https://github.com/Chinmoy-Kulkarni/setup-steps-guardian/discussions/5",
     );
+    expect(screen.getByRole("link", { name: "Evidence" })).toHaveAttribute("href", "/#evidence");
+    expect(
+      screen.queryByRole("heading", { name: "Pricing by private repository capacity" }),
+    ).not.toBeInTheDocument();
     expect(screen.queryByRole("link", { name: "Sign in with GitHub" })).not.toBeInTheDocument();
     expect(fetchMock).not.toHaveBeenCalled();
   });

@@ -1,0 +1,3903 @@
+{
+  "schemaVersion": 1,
+  "scriptVersion": 1,
+  "generatedAt": "2026-08-11T06:44:31.508Z",
+  "startedAt": "2026-08-11T06:43:19.739Z",
+  "query": "filename:copilot-setup-steps.yml path:.github/workflows",
+  "validator": {
+    "bundlePath": "packages/action/dist/index.cjs",
+    "bundleSha256": "1680f53d6bd61d361480dd05ba73f3221fb59f344b8b35e3d310deef66d93d24"
+  },
+  "search": {
+    "publicExactObserved": 873,
+    "pagesInspected": 10,
+    "incompleteResults": false,
+    "discardedNonExactPaths": 10
+  },
+  "sample": {
+    "requested": 100,
+    "selection": "First unique public exact-path GitHub code-search results after excluding the SetupStepsGuardian repository.",
+    "rawPreserved": false
+  },
+  "aggregate": {
+    "attempted": 100,
+    "validated": 100,
+    "failed": 0,
+    "valid": 95,
+    "invalid": 5,
+    "withWarnings": 91,
+    "findingCounts": [
+      {
+        "code": "ACTION_REF_MUTABLE",
+        "severity": "warning",
+        "occurrences": 229,
+        "workflows": 86
+      },
+      {
+        "code": "LOCKFILE_MISSING",
+        "severity": "warning",
+        "occurrences": 16,
+        "workflows": 15
+      },
+      {
+        "code": "INSTALL_COMMAND_MISMATCH",
+        "severity": "warning",
+        "occurrences": 14,
+        "workflows": 13
+      },
+      {
+        "code": "UNSUPPORTED_JOB_KEY",
+        "severity": "warning",
+        "occurrences": 11,
+        "workflows": 10
+      },
+      {
+        "code": "SECRET_REFERENCE",
+        "severity": "warning",
+        "occurrences": 10,
+        "workflows": 8
+      },
+      {
+        "code": "NODE_SETUP_MISSING",
+        "severity": "warning",
+        "occurrences": 4,
+        "workflows": 4
+      },
+      {
+        "code": "PYTHON_SETUP_MISSING",
+        "severity": "warning",
+        "occurrences": 4,
+        "workflows": 4
+      },
+      {
+        "code": "SETUP_JOB_MISSING",
+        "severity": "error",
+        "occurrences": 4,
+        "workflows": 4
+      },
+      {
+        "code": "TIMEOUT_INVALID",
+        "severity": "error",
+        "occurrences": 1,
+        "workflows": 1
+      }
+    ]
+  },
+  "records": [
+    {
+      "repository": "jonobr1/two.js",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "0033fb67939a84a21874497347cb3e547685dd98",
+      "apiUrl": "https://api.github.com/repositories/5694937/contents/.github/workflows/copilot-setup-steps.yml?ref=80fb368d91b834eab50fad7c0142ea47336a89c2",
+      "htmlUrl": "https://github.com/jonobr1/two.js/blob/80fb368d91b834eab50fad7c0142ea47336a89c2/.github/workflows/copilot-setup-steps.yml",
+      "ref": "80fb368d91b834eab50fad7c0142ea47336a89c2",
+      "metadataFiles": ["package-lock.json", "package.json"],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "2fbeca8a06c5816f79c2c87689e6ca96ce92ee0de758babe184620ea9b16b759",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "rstudio/bookdown",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "4cbff79a294ac594b72a83f8287803a06b45f336",
+      "apiUrl": "https://api.github.com/repositories/45090026/contents/.github/workflows/copilot-setup-steps.yml?ref=92e702a5133adcbce1f7e3f35cd9700bcbb370b6",
+      "htmlUrl": "https://github.com/rstudio/bookdown/blob/92e702a5133adcbce1f7e3f35cd9700bcbb370b6/.github/workflows/copilot-setup-steps.yml",
+      "ref": "92e702a5133adcbce1f7e3f35cd9700bcbb370b6",
+      "metadataFiles": [],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "07a6bf014ae12ec0ce0be68501720e4d922f2d1fae2750aa89d27b08010d4cce",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "slick/slick",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "ea2cf40b967ff41ca7ff0f4a8f7e41d1a6efa304",
+      "apiUrl": "https://api.github.com/repositories/133684/contents/.github/workflows/copilot-setup-steps.yml?ref=5406caa21da57ab0dd40840082e59903a4afc051",
+      "htmlUrl": "https://github.com/slick/slick/blob/5406caa21da57ab0dd40840082e59903a4afc051/.github/workflows/copilot-setup-steps.yml",
+      "ref": "5406caa21da57ab0dd40840082e59903a4afc051",
+      "metadataFiles": [],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "ad5cfbcfc07d59885811e9d92df5d88f3e0a68d6e5f65ffd29af8e8a35514092",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "mattlewis92/angular-calendar",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "88a3dd9ac898bda17d9140c13dc51e93700cc6e1",
+      "apiUrl": "https://api.github.com/repositories/57139102/contents/.github/workflows/copilot-setup-steps.yml?ref=9ae06cf4e5bdb5ee538c0ff2e57a4ec4f7facc68",
+      "htmlUrl": "https://github.com/mattlewis92/angular-calendar/blob/9ae06cf4e5bdb5ee538c0ff2e57a4ec4f7facc68/.github/workflows/copilot-setup-steps.yml",
+      "ref": "9ae06cf4e5bdb5ee538c0ff2e57a4ec4f7facc68",
+      "metadataFiles": ["package.json", "pnpm-lock.yaml"],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "2c6c0971ba597e1ba5cc87bb2376a4316a7547b6c83977b0b375dab57173abd5",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "INSTALL_COMMAND_MISMATCH",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "NuGetPackageExplorer/NuGetPackageExplorer",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "a36bc409d75c1f4bc06ad4048232e432a305b009",
+      "apiUrl": "https://api.github.com/repositories/42267778/contents/.github/workflows/copilot-setup-steps.yml?ref=a46ed5495e90c1167469191a3ef8ad717a62ea8d",
+      "htmlUrl": "https://github.com/NuGetPackageExplorer/NuGetPackageExplorer/blob/a46ed5495e90c1167469191a3ef8ad717a62ea8d/.github/workflows/copilot-setup-steps.yml",
+      "ref": "a46ed5495e90c1167469191a3ef8ad717a62ea8d",
+      "metadataFiles": ["package-lock.json", "package.json"],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "538ce081d44eb96756b6d9f37358a8da51010db4ad97a24aaf7750a6a10000e7",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "NODE_SETUP_MISSING",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml"
+          },
+          {
+            "code": "INSTALL_COMMAND_MISMATCH",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "InsightSoftwareConsortium/ITK",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "ac1d521e88d51ca0e83aec15f114a43b7a7427f7",
+      "apiUrl": "https://api.github.com/repositories/800928/contents/.github/workflows/copilot-setup-steps.yml?ref=2f6c5acceda891da57371a2a82542c8f8663ca67",
+      "htmlUrl": "https://github.com/InsightSoftwareConsortium/ITK/blob/2f6c5acceda891da57371a2a82542c8f8663ca67/.github/workflows/copilot-setup-steps.yml",
+      "ref": "2f6c5acceda891da57371a2a82542c8f8663ca67",
+      "metadataFiles": ["pyproject.toml"],
+      "validatorExitCode": 1,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "invalid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "aff21669a18387a7f928575132fbee05f6cc69a2266c6fb89cf21e6043a66567",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "TIMEOUT_INVALID",
+            "severity": "error",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/customize-the-agent-environment"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "LOCKFILE_MISSING",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "EliasOenal/multimon-ng",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "cff633c566a29e0bdb64cd23fedb23f12cd75761",
+      "apiUrl": "https://api.github.com/repositories/4381863/contents/.github/workflows/copilot-setup-steps.yml?ref=de0585926542687155852db502a9d2861e9acf95",
+      "htmlUrl": "https://github.com/EliasOenal/multimon-ng/blob/de0585926542687155852db502a9d2861e9acf95/.github/workflows/copilot-setup-steps.yml",
+      "ref": "de0585926542687155852db502a9d2861e9acf95",
+      "metadataFiles": [],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "f02da5b4868b4b9f193b3ad8e0445caca7d8c710f6d916e87105136acd7bcd48",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "bitcoin-sv/bitcoin-sv",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "4e1b20b2c4a0344340114648b93a4ff6fd8f3789",
+      "apiUrl": "https://api.github.com/repositories/146625002/contents/.github/workflows/copilot-setup-steps.yml?ref=879fc8b42168dd0e608dafd51b39c6dabad37d4d",
+      "htmlUrl": "https://github.com/bitcoin-sv/bitcoin-sv/blob/879fc8b42168dd0e608dafd51b39c6dabad37d4d/.github/workflows/copilot-setup-steps.yml",
+      "ref": "879fc8b42168dd0e608dafd51b39c6dabad37d4d",
+      "metadataFiles": [],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "f0668d2f24cafd61c27dd1899ed7eff4fae7acc969924688ef6689b08147e3f8",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "UNSUPPORTED_JOB_KEY",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/customize-the-agent-environment"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "microsoft/vscode-jupyter",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "45a2169eaef5469bc6981e0acd74cfa0ea2a309e",
+      "apiUrl": "https://api.github.com/repositories/294546561/contents/.github/workflows/copilot-setup-steps.yml?ref=f01d80ca0aa0dfdfa1d2e10a08943e12b776d155",
+      "htmlUrl": "https://github.com/microsoft/vscode-jupyter/blob/f01d80ca0aa0dfdfa1d2e10a08943e12b776d155/.github/workflows/copilot-setup-steps.yml",
+      "ref": "f01d80ca0aa0dfdfa1d2e10a08943e12b776d155",
+      "metadataFiles": ["package-lock.json", "package.json"],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "13a9637122a25c884b476b10bf7746bd7ada9f7d2cc712497c04a9ce02cb1155",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "facioquo/stock-indicators-dotnet",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "2253e8db6a5fdc8a1f24d9ce6daf5a02e0fe7115",
+      "apiUrl": "https://api.github.com/repositories/230706417/contents/.github/workflows/copilot-setup-steps.yml?ref=5cdceb1f075394ed07a6618a2d55090d23ebc342",
+      "htmlUrl": "https://github.com/facioquo/stock-indicators-dotnet/blob/5cdceb1f075394ed07a6618a2d55090d23ebc342/.github/workflows/copilot-setup-steps.yml",
+      "ref": "5cdceb1f075394ed07a6618a2d55090d23ebc342",
+      "metadataFiles": [],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "f4d27a950ed5eaba48f5f8ded980208ead565886faaf4827ca53a42eb2b6e862",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "SECRET_REFERENCE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/customize-the-agent-environment"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "sous-chefs/php",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "7f682abdd08454e19cb8ada4e77fa386d183a821",
+      "apiUrl": "https://api.github.com/repositories/3720891/contents/.github/workflows/copilot-setup-steps.yml?ref=c464081accb50633af5b755116daa17391cc69c2",
+      "htmlUrl": "https://github.com/sous-chefs/php/blob/c464081accb50633af5b755116daa17391cc69c2/.github/workflows/copilot-setup-steps.yml",
+      "ref": "c464081accb50633af5b755116daa17391cc69c2",
+      "metadataFiles": [],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "5f1c415d6cbfc84f26206c1bf7a2af07cc29cfcf4be18d619fc34adbcb9493a9",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "tympanix/Electorrent",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "2a5a404ba9fd1018fad2989dd99f385137129e13",
+      "apiUrl": "https://api.github.com/repositories/61438717/contents/.github/workflows/copilot-setup-steps.yml?ref=a4f1167d806676fd23fa8cfb348cb2133d3fa325",
+      "htmlUrl": "https://github.com/tympanix/Electorrent/blob/a4f1167d806676fd23fa8cfb348cb2133d3fa325/.github/workflows/copilot-setup-steps.yml",
+      "ref": "a4f1167d806676fd23fa8cfb348cb2133d3fa325",
+      "metadataFiles": ["package-lock.json", "package.json"],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "1f9242794892fcdf377accdbefb4f633d73aa290accce6ad67fef84e4b615d90",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "INSTALL_COMMAND_MISMATCH",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "EvilBeaver/OneScript",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "a10a7feb4ce1d3ee977d95e2b32d5bd0754b7cf0",
+      "apiUrl": "https://api.github.com/repositories/55775973/contents/.github/workflows/copilot-setup-steps.yml?ref=53c0efddc5d633c125b67a1ef2053a90d2e8379b",
+      "htmlUrl": "https://github.com/EvilBeaver/OneScript/blob/53c0efddc5d633c125b67a1ef2053a90d2e8379b/.github/workflows/copilot-setup-steps.yml",
+      "ref": "53c0efddc5d633c125b67a1ef2053a90d2e8379b",
+      "metadataFiles": [],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "d4f309ca9ee4989e312b1d2b1bf094243f7b4d1d36ad0a727f3e8caa7af21b0f",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "endojs/endo",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "db90596ed80ec3150c81f510ac910de5903cb62c",
+      "apiUrl": "https://api.github.com/repositories/220080707/contents/.github/workflows/copilot-setup-steps.yml?ref=1fa6c227e58f57727376a22cad176c6592c33006",
+      "htmlUrl": "https://github.com/endojs/endo/blob/1fa6c227e58f57727376a22cad176c6592c33006/.github/workflows/copilot-setup-steps.yml",
+      "ref": "1fa6c227e58f57727376a22cad176c6592c33006",
+      "metadataFiles": ["package.json", "yarn.lock"],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "1d5ea2d728587ab62e804144d07c6df9366079a5df628ab1243326b648c0b938",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "swoosh/swoosh",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "f32d6ba10b82e0774a03f45367c8fe9cb5c3e4ee",
+      "apiUrl": "https://api.github.com/repositories/53172916/contents/.github/workflows/copilot-setup-steps.yml?ref=ea6fca12b55ef469eaff6416d3adbed296f5bff3",
+      "htmlUrl": "https://github.com/swoosh/swoosh/blob/ea6fca12b55ef469eaff6416d3adbed296f5bff3/.github/workflows/copilot-setup-steps.yml",
+      "ref": "ea6fca12b55ef469eaff6416d3adbed296f5bff3",
+      "metadataFiles": [],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "dcb293b79be226fcdd927012dc0214390543a371d99ec2145ed1f844a4c393c5",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "dsccommunity/SqlServerDsc",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "fc0445fc22c7b82b05a6664bdad588c9c09c6a7d",
+      "apiUrl": "https://api.github.com/repositories/34022262/contents/.github/workflows/copilot-setup-steps.yml?ref=2980d8ce3677a0a3baab8ac38112e45c205e6c2d",
+      "htmlUrl": "https://github.com/dsccommunity/SqlServerDsc/blob/2980d8ce3677a0a3baab8ac38112e45c205e6c2d/.github/workflows/copilot-setup-steps.yml",
+      "ref": "2980d8ce3677a0a3baab8ac38112e45c205e6c2d",
+      "metadataFiles": [],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "0167b6955d59f37fa8d8e68cb95eb8fa02581e2d4c2d5649463550fbb2226c9d",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "UNSUPPORTED_JOB_KEY",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/customize-the-agent-environment"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "ripple/explorer",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "be6e38ee47d1bd1dd60e4d37a0dc6f6a079e1ff9",
+      "apiUrl": "https://api.github.com/repositories/380284064/contents/.github/workflows/copilot-setup-steps.yml?ref=78b4737bdb21c66b6293a8ed044768bd6c8625f5",
+      "htmlUrl": "https://github.com/ripple/explorer/blob/78b4737bdb21c66b6293a8ed044768bd6c8625f5/.github/workflows/copilot-setup-steps.yml",
+      "ref": "78b4737bdb21c66b6293a8ed044768bd6c8625f5",
+      "metadataFiles": ["package-lock.json", "package.json"],
+      "validatorExitCode": 1,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "invalid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "1ea2587c90fe84ec93d40b474c3248ac13b155d30c50ff41379700ebe4d82ad9",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "SETUP_JOB_MISSING",
+            "severity": "error",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/customize-the-agent-environment"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "AtlassianPS/JiraPS",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "31edd717d8d6461b619456b170f9e0ee9746312d",
+      "apiUrl": "https://api.github.com/repositories/38776072/contents/.github/workflows/copilot-setup-steps.yml?ref=ec414bb03b2be8c7251251d5ed83afcf6ec8949a",
+      "htmlUrl": "https://github.com/AtlassianPS/JiraPS/blob/ec414bb03b2be8c7251251d5ed83afcf6ec8949a/.github/workflows/copilot-setup-steps.yml",
+      "ref": "ec414bb03b2be8c7251251d5ed83afcf6ec8949a",
+      "metadataFiles": [],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "d6b0494eedcb43bb93370abea686e3b73b2addfad2c35cf48bcb38d0f8787dbe",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "microsoft/pg_durable",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "e4705ea11e3bbf8effbf70639257bd7ff3977f73",
+      "apiUrl": "https://api.github.com/repositories/1157361127/contents/.github/workflows/copilot-setup-steps.yml?ref=3c4463f7b1d29aa4c7da779b6b27ea384d0e7fb9",
+      "htmlUrl": "https://github.com/microsoft/pg_durable/blob/3c4463f7b1d29aa4c7da779b6b27ea384d0e7fb9/.github/workflows/copilot-setup-steps.yml",
+      "ref": "3c4463f7b1d29aa4c7da779b6b27ea384d0e7fb9",
+      "metadataFiles": [],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "6a1b3a143cff2f43619481c899fb9028cc9ea5cf8687993281bd453427f3a4a4",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "UNSUPPORTED_JOB_KEY",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/customize-the-agent-environment"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "fsprojects/FSharp.Data.GraphQL",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "636afdfed78735a5a245f2c9664ebaaf739b76cb",
+      "apiUrl": "https://api.github.com/repositories/55262135/contents/.github/workflows/copilot-setup-steps.yml?ref=c072f8e6a195b0b8ddb3c3948c580268bb611208",
+      "htmlUrl": "https://github.com/fsprojects/FSharp.Data.GraphQL/blob/c072f8e6a195b0b8ddb3c3948c580268bb611208/.github/workflows/copilot-setup-steps.yml",
+      "ref": "c072f8e6a195b0b8ddb3c3948c580268bb611208",
+      "metadataFiles": ["package.json"],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "dd5bb5e370f870b6f4105edff9ca8ff27929ee1818a18d2480e7a77e6fce1a84",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "LOCKFILE_MISSING",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "apollographql/apollo-client-integrations",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "1932d477446787fdc7318e0d52192ddf14aba77a",
+      "apiUrl": "https://api.github.com/repositories/615298329/contents/.github/workflows/copilot-setup-steps.yml?ref=3a5653c592d6426a5ee5491997c5ce377160a2e9",
+      "htmlUrl": "https://github.com/apollographql/apollo-client-integrations/blob/3a5653c592d6426a5ee5491997c5ce377160a2e9/.github/workflows/copilot-setup-steps.yml",
+      "ref": "3a5653c592d6426a5ee5491997c5ce377160a2e9",
+      "metadataFiles": ["package.json", "yarn.lock"],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "0c1f6891ff454620a0645f1432315c42710c0244a360be608e414170ded30b39",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "eclipse-rdf4j/rdf4j",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "138e2c702aae0992db94eab7e3a1fb408ff76db5",
+      "apiUrl": "https://api.github.com/repositories/49670957/contents/.github/workflows/copilot-setup-steps.yml?ref=270eeb5245ac0cdaf98e93411bc8dc0554737234",
+      "htmlUrl": "https://github.com/eclipse-rdf4j/rdf4j/blob/270eeb5245ac0cdaf98e93411bc8dc0554737234/.github/workflows/copilot-setup-steps.yml",
+      "ref": "270eeb5245ac0cdaf98e93411bc8dc0554737234",
+      "metadataFiles": [],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "b8019645da75e0fdcb5a8918ad70f016cbb428b98436db45105b6cb972431ddc",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "UNSUPPORTED_JOB_KEY",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/customize-the-agent-environment"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "shugo/textbringer",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "d8f2ec861da4e9a72091f73b07f28750aac7d220",
+      "apiUrl": "https://api.github.com/repositories/77617379/contents/.github/workflows/copilot-setup-steps.yml?ref=93cfcc0869337d164d0deed0ea9602dc856c00fe",
+      "htmlUrl": "https://github.com/shugo/textbringer/blob/93cfcc0869337d164d0deed0ea9602dc856c00fe/.github/workflows/copilot-setup-steps.yml",
+      "ref": "93cfcc0869337d164d0deed0ea9602dc856c00fe",
+      "metadataFiles": [],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "e922f3efe2c578760ff7056847fbfd7e625b08a26db49db7946b412cd321121a",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "geneontology/go-ontology",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "a0d3332aaf9e7363c28db80366ec25bd015801cb",
+      "apiUrl": "https://api.github.com/repositories/37750722/contents/.github/workflows/copilot-setup-steps.yml?ref=e5158ca69393a539f4f5e81a468f251c4c9d62c6",
+      "htmlUrl": "https://github.com/geneontology/go-ontology/blob/e5158ca69393a539f4f5e81a468f251c4c9d62c6/.github/workflows/copilot-setup-steps.yml",
+      "ref": "e5158ca69393a539f4f5e81a468f251c4c9d62c6",
+      "metadataFiles": [],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "e2c8c1b39f27e625026b17a1c10bbd09fba9737abe838274ebffdd644bd76622",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "MaestroError/LarAgent",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "8303dd358e14d886f6b70b6e8d5f548afad48518",
+      "apiUrl": "https://api.github.com/repositories/903027523/contents/.github/workflows/copilot-setup-steps.yml?ref=d1947214367c3a46a9b5fa85af17eee35c855ff1",
+      "htmlUrl": "https://github.com/MaestroError/LarAgent/blob/d1947214367c3a46a9b5fa85af17eee35c855ff1/.github/workflows/copilot-setup-steps.yml",
+      "ref": "d1947214367c3a46a9b5fa85af17eee35c855ff1",
+      "metadataFiles": [],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "d0b81a8cf9b01560b4db01a92823aedb6c897a6492069f389ad55d1a9b71b6d9",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "opsmill/infrahub",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "a64fd5dd541e9f2730ebf55bdd600a795c56ea19",
+      "apiUrl": "https://api.github.com/repositories/528799794/contents/.github/workflows/copilot-setup-steps.yml?ref=f77cf88b3120cb82a6bb26ab6ac3af50a60c3956",
+      "htmlUrl": "https://github.com/opsmill/infrahub/blob/f77cf88b3120cb82a6bb26ab6ac3af50a60c3956/.github/workflows/copilot-setup-steps.yml",
+      "ref": "f77cf88b3120cb82a6bb26ab6ac3af50a60c3956",
+      "metadataFiles": ["pyproject.toml", "uv.lock"],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "bf110765afaa4c7a5316d7aa558187e729e59908ee3cad5ea701d83ec5f276bd",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "PYTHON_SETUP_MISSING",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml"
+          },
+          {
+            "code": "INSTALL_COMMAND_MISMATCH",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "FidelusAleksander/ghcertified",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "03611d810255f65563e7e4e0544ae38aea7b4401",
+      "apiUrl": "https://api.github.com/repositories/679565720/contents/.github/workflows/copilot-setup-steps.yml?ref=d79a274240c28bd40090704fe12b75d6460796e3",
+      "htmlUrl": "https://github.com/FidelusAleksander/ghcertified/blob/d79a274240c28bd40090704fe12b75d6460796e3/.github/workflows/copilot-setup-steps.yml",
+      "ref": "d79a274240c28bd40090704fe12b75d6460796e3",
+      "metadataFiles": [],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "890e5e1558e3cab4c694b72c7d8e81882fc5ac38a67a850d8b6335b956e70ceb",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "praeclarum/CLanguage",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "d60be27dde743d24b5f3ff154d999b3227ca861b",
+      "apiUrl": "https://api.github.com/repositories/119495800/contents/.github/workflows/copilot-setup-steps.yml?ref=c8e44400ff1abf8a8ad150fc69f7fa8ed8fca511",
+      "htmlUrl": "https://github.com/praeclarum/CLanguage/blob/c8e44400ff1abf8a8ad150fc69f7fa8ed8fca511/.github/workflows/copilot-setup-steps.yml",
+      "ref": "c8e44400ff1abf8a8ad150fc69f7fa8ed8fca511",
+      "metadataFiles": [],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "815ebd046a3ebbd12c0572b43f67c1cde238c53bc62feb6babe771acd8bbc799",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "VSadov/Satori",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "ed275343219aabdba9a94d4bbfd7609941e59c34",
+      "apiUrl": "https://api.github.com/repositories/257085842/contents/.github/workflows/copilot-setup-steps.yml?ref=9a4824e5797b246d9956ee6eeb66d1e7cbb4abd3",
+      "htmlUrl": "https://github.com/VSadov/Satori/blob/9a4824e5797b246d9956ee6eeb66d1e7cbb4abd3/.github/workflows/copilot-setup-steps.yml",
+      "ref": "9a4824e5797b246d9956ee6eeb66d1e7cbb4abd3",
+      "metadataFiles": [],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "00a7d14e7396bec10076e19dd4ca858cf32356bb362aac37f2849571c86a2386",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "a16z/halmos",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "ad7e4d58058ad21bc44e231b653e387797842985",
+      "apiUrl": "https://api.github.com/repositories/577492459/contents/.github/workflows/copilot-setup-steps.yml?ref=079bb4241d1b460baf986257d56ea86977d73451",
+      "htmlUrl": "https://github.com/a16z/halmos/blob/079bb4241d1b460baf986257d56ea86977d73451/.github/workflows/copilot-setup-steps.yml",
+      "ref": "079bb4241d1b460baf986257d56ea86977d73451",
+      "metadataFiles": ["pyproject.toml"],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "cc42cd16a9ee9721cd482abd40047a73c54d7211ceed535784daba8cf72f3481",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "LOCKFILE_MISSING",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "pybotters/pybotters",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "b7eb2d29cf965a4a452b48c56ca682f99f79b25d",
+      "apiUrl": "https://api.github.com/repositories/351054362/contents/.github/workflows/copilot-setup-steps.yml?ref=5c06bdda1f006bfbf4a36fdc44ba77d8a55d2a36",
+      "htmlUrl": "https://github.com/pybotters/pybotters/blob/5c06bdda1f006bfbf4a36fdc44ba77d8a55d2a36/.github/workflows/copilot-setup-steps.yml",
+      "ref": "5c06bdda1f006bfbf4a36fdc44ba77d8a55d2a36",
+      "metadataFiles": ["pyproject.toml"],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "891b471e016ccf9d8304b09b1ed944b545afc9537d4a59b6fbf731d4477eb97c",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "LOCKFILE_MISSING",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "microsoft/Power-CAT-Copilot-Studio-Kit",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "228975f2c88146423e50333c054407a5be3ee179",
+      "apiUrl": "https://api.github.com/repositories/791810985/contents/.github/workflows/copilot-setup-steps.yml?ref=5f67700af6964636092a557bb85646154522de26",
+      "htmlUrl": "https://github.com/microsoft/Power-CAT-Copilot-Studio-Kit/blob/5f67700af6964636092a557bb85646154522de26/.github/workflows/copilot-setup-steps.yml",
+      "ref": "5f67700af6964636092a557bb85646154522de26",
+      "metadataFiles": [],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "93f15973dc194c156e98cba0c276aaabb461043ff3b5cd0fffae9911ae2453c4",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "mcthesw/game-save-manager",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "925b64e930a0020433ff452b2f3ef95480d1a466",
+      "apiUrl": "https://api.github.com/repositories/452249835/contents/.github/workflows/copilot-setup-steps.yml?ref=b58b3b149d0458af638ad59901cf52b027fbbca5",
+      "htmlUrl": "https://github.com/mcthesw/game-save-manager/blob/b58b3b149d0458af638ad59901cf52b027fbbca5/.github/workflows/copilot-setup-steps.yml",
+      "ref": "b58b3b149d0458af638ad59901cf52b027fbbca5",
+      "metadataFiles": ["package.json", "pnpm-lock.yaml"],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "156cb00d375fbfa4e156b022ca050166d1370e40a447fbe0af2936f194c51901",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "INSTALL_COMMAND_MISMATCH",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "Tapanila/SharpCaster",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "2a6b8323dcb1f5ad7ac8dbc00070d0367366e455",
+      "apiUrl": "https://api.github.com/repositories/49721827/contents/.github/workflows/copilot-setup-steps.yml?ref=d89e7d87e4a24925612b7d2491ad48d89f34e486",
+      "htmlUrl": "https://github.com/Tapanila/SharpCaster/blob/d89e7d87e4a24925612b7d2491ad48d89f34e486/.github/workflows/copilot-setup-steps.yml",
+      "ref": "d89e7d87e4a24925612b7d2491ad48d89f34e486",
+      "metadataFiles": [],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "1513c1fead8e21f81aa4d30f897a9d3e32ba5664a8631415b145b81cc7980e0b",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "obophenotype/uberon",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "554ae3789fe8cecfb6587918c62d75bf7aef75ed",
+      "apiUrl": "https://api.github.com/repositories/564599/contents/.github/workflows/copilot-setup-steps.yml?ref=802a2e5e8db187af5a8cf6e007fa10e779e37e06",
+      "htmlUrl": "https://github.com/obophenotype/uberon/blob/802a2e5e8db187af5a8cf6e007fa10e779e37e06/.github/workflows/copilot-setup-steps.yml",
+      "ref": "802a2e5e8db187af5a8cf6e007fa10e779e37e06",
+      "metadataFiles": [],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "239aa6245e6e1970d8d78af706864b1fdc99dad87e9c28dcd83382b7b6b7c11a",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "useblocks/sphinx-needs",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "7442837bdb663613d4a99d50fb3a49488d19c98b",
+      "apiUrl": "https://api.github.com/repositories/75225949/contents/.github/workflows/copilot-setup-steps.yml?ref=9d37078aeb55c277acf3ad584aabc7ef732a553b",
+      "htmlUrl": "https://github.com/useblocks/sphinx-needs/blob/9d37078aeb55c277acf3ad584aabc7ef732a553b/.github/workflows/copilot-setup-steps.yml",
+      "ref": "9d37078aeb55c277acf3ad584aabc7ef732a553b",
+      "metadataFiles": ["package.json", "pyproject.toml"],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "97e2ee1feaa726ea801e89f37c7f66ae468a08c63a74aa4760c77a5a93b573ac",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "LOCKFILE_MISSING",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml"
+          },
+          {
+            "code": "LOCKFILE_MISSING",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "typedclojure/typedclojure",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "2b08670491c430cbe021637cef40736528a21756",
+      "apiUrl": "https://api.github.com/repositories/241807532/contents/.github/workflows/copilot-setup-steps.yml?ref=512df6fb4c4f80d4199679be169232f0c4ad1169",
+      "htmlUrl": "https://github.com/typedclojure/typedclojure/blob/512df6fb4c4f80d4199679be169232f0c4ad1169/.github/workflows/copilot-setup-steps.yml",
+      "ref": "512df6fb4c4f80d4199679be169232f0c4ad1169",
+      "metadataFiles": [],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "bb15af0c6c527dda81142f9b2476e135380b1f55000f6fc52b8e1cedabc95d2b",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "mixpanel/mixpanel-java",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "775531b603f4bc4e2220038d94e7d2b221950567",
+      "apiUrl": "https://api.github.com/repositories/6804218/contents/.github/workflows/copilot-setup-steps.yml?ref=fa260e1ea6b868d14ca52c6b9b5ecc9aa56b6694",
+      "htmlUrl": "https://github.com/mixpanel/mixpanel-java/blob/fa260e1ea6b868d14ca52c6b9b5ecc9aa56b6694/.github/workflows/copilot-setup-steps.yml",
+      "ref": "fa260e1ea6b868d14ca52c6b9b5ecc9aa56b6694",
+      "metadataFiles": [],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "65f69473b4f56e51a44e0d6b576d30da56a51a11b2519da39bc735e0901a4c3f",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "linux-do/cdk",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "69b36659ac92224e7dc2645c4bf167348b109394",
+      "apiUrl": "https://api.github.com/repositories/991787132/contents/.github/workflows/copilot-setup-steps.yml?ref=ad4a9f35919ad3f9cacf6b1e7776dc87cab3dcbe",
+      "htmlUrl": "https://github.com/linux-do/cdk/blob/ad4a9f35919ad3f9cacf6b1e7776dc87cab3dcbe/.github/workflows/copilot-setup-steps.yml",
+      "ref": "ad4a9f35919ad3f9cacf6b1e7776dc87cab3dcbe",
+      "metadataFiles": [],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "44d08cd4ca91e3355c4ec56df9cc1ead106f9256938a659dc05b3b470f26552c",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "microsoft/vs-solutionpersistence",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "3c032fae712bff4ae4daf2658f5f97eea20ed87b",
+      "apiUrl": "https://api.github.com/repositories/809968295/contents/.github/workflows/copilot-setup-steps.yml?ref=ea32bc0df5e54009a289d864bb720be9794a07d7",
+      "htmlUrl": "https://github.com/microsoft/vs-solutionpersistence/blob/ea32bc0df5e54009a289d864bb720be9794a07d7/.github/workflows/copilot-setup-steps.yml",
+      "ref": "ea32bc0df5e54009a289d864bb720be9794a07d7",
+      "metadataFiles": [],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "f870cad00914f05d558ba01516e35147cc5450f2ee9fd777c37b650f0a1f38a2",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "jonathanpeppers/spice",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "dba1ae62530b9b88d6dea5abf30e2eacf7647864",
+      "apiUrl": "https://api.github.com/repositories/594226889/contents/.github/workflows/copilot-setup-steps.yml?ref=b21355ed9168df21b337d10f563575947d08f675",
+      "htmlUrl": "https://github.com/jonathanpeppers/spice/blob/b21355ed9168df21b337d10f563575947d08f675/.github/workflows/copilot-setup-steps.yml",
+      "ref": "b21355ed9168df21b337d10f563575947d08f675",
+      "metadataFiles": [],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "7550610889a765e7f6d62039bc71012bb63f2207b56e4a5e831f296538f0edac",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "UNSUPPORTED_JOB_KEY",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/customize-the-agent-environment"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "Particular/docs.particular.net",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "1ff6721634c32fe4049376dfb3ca75515f59055c",
+      "apiUrl": "https://api.github.com/repositories/11727301/contents/.github/workflows/copilot-setup-steps.yml?ref=6544c161308a97853261e7f9d9e9247f683819b5",
+      "htmlUrl": "https://github.com/Particular/docs.particular.net/blob/6544c161308a97853261e7f9d9e9247f683819b5/.github/workflows/copilot-setup-steps.yml",
+      "ref": "6544c161308a97853261e7f9d9e9247f683819b5",
+      "metadataFiles": [],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "fe90242d06f2c584f8d0963888c99bcd70779a8db925618ce5dbbbdc9f6e84e8",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "UNSUPPORTED_JOB_KEY",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/customize-the-agent-environment"
+          },
+          {
+            "code": "UNSUPPORTED_JOB_KEY",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/customize-the-agent-environment"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "unoplatform/uno.toolkit.ui",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "ca6194626d1bbee9feee1c279574f8f91d3c21fe",
+      "apiUrl": "https://api.github.com/repositories/360271174/contents/.github/workflows/copilot-setup-steps.yml?ref=a4fde4fc6f46e231dc109227cd6e02a493bada34",
+      "htmlUrl": "https://github.com/unoplatform/uno.toolkit.ui/blob/a4fde4fc6f46e231dc109227cd6e02a493bada34/.github/workflows/copilot-setup-steps.yml",
+      "ref": "a4fde4fc6f46e231dc109227cd6e02a493bada34",
+      "metadataFiles": [],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "97e57320633aba7fd9af8e40d0210324c161474bd07021111480cc1b7bf8499b",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "UNSUPPORTED_JOB_KEY",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/customize-the-agent-environment"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "nanvix/nanvix",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "3906b0095b41b5cd55fde9b6cc9abf6ae51bad74",
+      "apiUrl": "https://api.github.com/repositories/11183126/contents/.github/workflows/copilot-setup-steps.yml?ref=6fbc48b2566538c630052bab45ffcf351524fc90",
+      "htmlUrl": "https://github.com/nanvix/nanvix/blob/6fbc48b2566538c630052bab45ffcf351524fc90/.github/workflows/copilot-setup-steps.yml",
+      "ref": "6fbc48b2566538c630052bab45ffcf351524fc90",
+      "metadataFiles": ["requirements.txt"],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "eeb6ee940e520936557d2fc2abe9b6f24c21fdeadb12c42bc1a1bd1b9e3e22e6",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "PYTHON_SETUP_MISSING",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml"
+          },
+          {
+            "code": "INSTALL_COMMAND_MISMATCH",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "rokucommunity/brighterscript",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "63c78dea258ea4498522d01db01872389736bd45",
+      "apiUrl": "https://api.github.com/repositories/176580307/contents/.github/workflows/copilot-setup-steps.yml?ref=0577bfcbd18c5ce0158bb4c2e9da39addf6babca",
+      "htmlUrl": "https://github.com/rokucommunity/brighterscript/blob/0577bfcbd18c5ce0158bb4c2e9da39addf6babca/.github/workflows/copilot-setup-steps.yml",
+      "ref": "0577bfcbd18c5ce0158bb4c2e9da39addf6babca",
+      "metadataFiles": ["package-lock.json", "package.json"],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "dba6f5ea9cb092b71cb366111c25853a357196258972b44a7588829459a04fa6",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "CyclopsMC/IntegratedDynamics",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "d456332197cc8ee8d2a4416df831a8570d2142d8",
+      "apiUrl": "https://api.github.com/repositories/33450119/contents/.github/workflows/copilot-setup-steps.yml?ref=78f9e210a999733cc6facef24b00bf9f35a8c17c",
+      "htmlUrl": "https://github.com/CyclopsMC/IntegratedDynamics/blob/78f9e210a999733cc6facef24b00bf9f35a8c17c/.github/workflows/copilot-setup-steps.yml",
+      "ref": "78f9e210a999733cc6facef24b00bf9f35a8c17c",
+      "metadataFiles": [],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "b712933c9b325f27068ab32fd6611e8ad925fad5256867136e23b194280159ef",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "SECRET_REFERENCE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/customize-the-agent-environment"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "oscript-library/opm",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "8b756a5b2915cfaac852316d0dbbd3f2a6f7fee7",
+      "apiUrl": "https://api.github.com/repositories/53867294/contents/.github/workflows/copilot-setup-steps.yml?ref=22703d67cbca7a27ed49a5b94ae5c3801c042c06",
+      "htmlUrl": "https://github.com/oscript-library/opm/blob/22703d67cbca7a27ed49a5b94ae5c3801c042c06/.github/workflows/copilot-setup-steps.yml",
+      "ref": "22703d67cbca7a27ed49a5b94ae5c3801c042c06",
+      "metadataFiles": [],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "4719f15c77e410c685857755f501b6a6d539b13616cf09beaa9647ee493d85b5",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "IvanJosipovic/KubeUI",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "18bf2a0c93d5db3ca913af83675caff0741da433",
+      "apiUrl": "https://api.github.com/repositories/180503555/contents/.github/workflows/copilot-setup-steps.yml?ref=2550957ba16586c63ffa6574068dedd74dab9a9c",
+      "htmlUrl": "https://github.com/IvanJosipovic/KubeUI/blob/2550957ba16586c63ffa6574068dedd74dab9a9c/.github/workflows/copilot-setup-steps.yml",
+      "ref": "2550957ba16586c63ffa6574068dedd74dab9a9c",
+      "metadataFiles": [],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "23010a11aea0fbe62bc241996baff7efa1fcb4cdcd10bd87d1f3c83991981024",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "Codeinwp/otter-blocks",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "6b5d615db79fc479e42fd3bfd9583b7adb06cbfd",
+      "apiUrl": "https://api.github.com/repositories/152573325/contents/.github/workflows/copilot-setup-steps.yml?ref=2d2845427e9a8d38cac21189dbdcb96741b62b45",
+      "htmlUrl": "https://github.com/Codeinwp/otter-blocks/blob/2d2845427e9a8d38cac21189dbdcb96741b62b45/.github/workflows/copilot-setup-steps.yml",
+      "ref": "2d2845427e9a8d38cac21189dbdcb96741b62b45",
+      "metadataFiles": ["package-lock.json", "package.json"],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "0030cc1191740ed3ae7b57ee4ee13ba1dfb90de8c85f4d0616179cc81fb52fe7",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "cirruslabs/cirrus-cli",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "6e639264c95af29ed9e7816aca75687d8ce7291b",
+      "apiUrl": "https://api.github.com/repositories/278458949/contents/.github/workflows/copilot-setup-steps.yml?ref=1769788a20dc72f6aef85bcdc92abaa1bf061cdc",
+      "htmlUrl": "https://github.com/cirruslabs/cirrus-cli/blob/1769788a20dc72f6aef85bcdc92abaa1bf061cdc/.github/workflows/copilot-setup-steps.yml",
+      "ref": "1769788a20dc72f6aef85bcdc92abaa1bf061cdc",
+      "metadataFiles": [],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "f3fdc8d88480672e09884155c5bb6461a029453ba6c65409db6c4f28f846f9cf",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "luantak/FokusLauncher",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "17f62ca6b5ab8a0cf832f63b986b9b0da6e2fcb9",
+      "apiUrl": "https://api.github.com/repositories/1155819637/contents/.github/workflows/copilot-setup-steps.yml?ref=bd3d88082bdf0d679555c721ac7f74e12a44598b",
+      "htmlUrl": "https://github.com/luantak/FokusLauncher/blob/bd3d88082bdf0d679555c721ac7f74e12a44598b/.github/workflows/copilot-setup-steps.yml",
+      "ref": "bd3d88082bdf0d679555c721ac7f74e12a44598b",
+      "metadataFiles": [],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "66af8168328a06526928b0dda391ffe735f2ff38269e71ed50676e7d40e2b8d0",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "dvcrn/mcp-server-devonthink",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "d8f2ba62627c0e633ef1f9f44d48a21245351ce3",
+      "apiUrl": "https://api.github.com/repositories/1022002954/contents/.github/workflows/copilot-setup-steps.yml?ref=e25463a048a78d714510553860cb5c5af6c0a64d",
+      "htmlUrl": "https://github.com/dvcrn/mcp-server-devonthink/blob/e25463a048a78d714510553860cb5c5af6c0a64d/.github/workflows/copilot-setup-steps.yml",
+      "ref": "e25463a048a78d714510553860cb5c5af6c0a64d",
+      "metadataFiles": ["package-lock.json", "package.json"],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "743d9c78cf6806f83d426183361a3c1389d8c724d5a2ad0fc6a7129be91b1024",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "djezzzl/n1_loader",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "36d13cfcf679859f264d3b71f19488644f31cd75",
+      "apiUrl": "https://api.github.com/repositories/439619944/contents/.github/workflows/copilot-setup-steps.yml?ref=f54f236b22e89ab9cd707991a3907df80499a1d0",
+      "htmlUrl": "https://github.com/djezzzl/n1_loader/blob/f54f236b22e89ab9cd707991a3907df80499a1d0/.github/workflows/copilot-setup-steps.yml",
+      "ref": "f54f236b22e89ab9cd707991a3907df80499a1d0",
+      "metadataFiles": [],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "34ececbc895694e39c5e0e0ad8ed9c1a0db16f5ac6a6990831cc15edf3d83434",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "UNSUPPORTED_JOB_KEY",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/customize-the-agent-environment"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "takenet/blip-ds",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "39000d7eb1f87d796ae25cd309e31906ff28aec5",
+      "apiUrl": "https://api.github.com/repositories/229129728/contents/.github/workflows/copilot-setup-steps.yml?ref=900a57b0a1022323be1569ed295e755ab74b8752",
+      "htmlUrl": "https://github.com/takenet/blip-ds/blob/900a57b0a1022323be1569ed295e755ab74b8752/.github/workflows/copilot-setup-steps.yml",
+      "ref": "900a57b0a1022323be1569ed295e755ab74b8752",
+      "metadataFiles": ["package-lock.json", "package.json"],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "adc0eae47564d9ce0cd1b1a369ebd8d59785725846d2f06773ee8d7381044373",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "insightsengineering/teal.modules.clinical",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "0f06e1984a4430909e6534c1f644baa9db0c6b38",
+      "apiUrl": "https://api.github.com/repositories/383270623/contents/.github/workflows/copilot-setup-steps.yml?ref=1d6147a61fe76c872dd96aefaf9db2739dd7e862",
+      "htmlUrl": "https://github.com/insightsengineering/teal.modules.clinical/blob/1d6147a61fe76c872dd96aefaf9db2739dd7e862/.github/workflows/copilot-setup-steps.yml",
+      "ref": "1d6147a61fe76c872dd96aefaf9db2739dd7e862",
+      "metadataFiles": [],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "2126646cd7f1497460bc6b115428ea6f3d6b96a3175aad6a4b967418369f6b6d",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "koplyarov/wigwag",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "ad040dbd0e2480ae6d6e73811f41ae76d3890d77",
+      "apiUrl": "https://api.github.com/repositories/50849564/contents/.github/workflows/copilot-setup-steps.yml?ref=d3e828e5bc904a0e24fad1d432c3c2f356922375",
+      "htmlUrl": "https://github.com/koplyarov/wigwag/blob/d3e828e5bc904a0e24fad1d432c3c2f356922375/.github/workflows/copilot-setup-steps.yml",
+      "ref": "d3e828e5bc904a0e24fad1d432c3c2f356922375",
+      "metadataFiles": [],
+      "validatorExitCode": 1,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "invalid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "4721499c0e767c9fa6ffea58c4972b9972778c381e32fb9a3dc6cdc78304d7ba",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "SETUP_JOB_MISSING",
+            "severity": "error",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/customize-the-agent-environment"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "involvex/youtube-music-cli",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "a98d1e66b10ee571754988859fabc99b1cc52591",
+      "apiUrl": "https://api.github.com/repositories/1157600927/contents/.github/workflows/copilot-setup-steps.yml?ref=16fc0653a77ce497cdc30cbacd4d0ec19964b782",
+      "htmlUrl": "https://github.com/involvex/youtube-music-cli/blob/16fc0653a77ce497cdc30cbacd4d0ec19964b782/.github/workflows/copilot-setup-steps.yml",
+      "ref": "16fc0653a77ce497cdc30cbacd4d0ec19964b782",
+      "metadataFiles": ["package.json"],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "525410953e9c2844b9d104224fb49f725f288ab2182a4c52877cafb2d23beed9",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "LOCKFILE_MISSING",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "specs-feup/clava",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "493523ae44358031572a476697d7e59302a0cf3c",
+      "apiUrl": "https://api.github.com/repositories/100822893/contents/.github/workflows/copilot-setup-steps.yml?ref=caac5a353e7efcb3760367e4e881762957ed8ecc",
+      "htmlUrl": "https://github.com/specs-feup/clava/blob/caac5a353e7efcb3760367e4e881762957ed8ecc/.github/workflows/copilot-setup-steps.yml",
+      "ref": "caac5a353e7efcb3760367e4e881762957ed8ecc",
+      "metadataFiles": [],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "c854f01832c12d5bb00ef44057235090226f74e7e4de4ad27eb7545bd13da3a1",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "thorek1/MacroModelling.jl",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "eddf9aa97d8e273710287db892b79f503a5369b9",
+      "apiUrl": "https://api.github.com/repositories/571475096/contents/.github/workflows/copilot-setup-steps.yml?ref=7ccd0e3f81d9a80f098365a26b89eafa85fac80b",
+      "htmlUrl": "https://github.com/thorek1/MacroModelling.jl/blob/7ccd0e3f81d9a80f098365a26b89eafa85fac80b/.github/workflows/copilot-setup-steps.yml",
+      "ref": "7ccd0e3f81d9a80f098365a26b89eafa85fac80b",
+      "metadataFiles": [],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "0a6bae4131910d85ac1488a503397589add99b9c6357f184275d0e73feb97e24",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "eclipse-equinox/equinox",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "9e73d04ad16ea672c8ba3ad9ff8a4859cd7c3f5b",
+      "apiUrl": "https://api.github.com/repositories/503741098/contents/.github/workflows/copilot-setup-steps.yml?ref=6b91f905ca1f51bf551b4e57f60d5345000582b2",
+      "htmlUrl": "https://github.com/eclipse-equinox/equinox/blob/6b91f905ca1f51bf551b4e57f60d5345000582b2/.github/workflows/copilot-setup-steps.yml",
+      "ref": "6b91f905ca1f51bf551b4e57f60d5345000582b2",
+      "metadataFiles": [],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "f5f7cd531cbfec3a67f0cd51b73499b2ed150bb418eeda40aeed3324fd2eeb2c",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "linux-do/credit",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "4aec2afc30e968b950133b68416eb59a4602ed57",
+      "apiUrl": "https://api.github.com/repositories/1119389274/contents/.github/workflows/copilot-setup-steps.yml?ref=3c0ff2684ad3fde49634d769833f2c4e35b33334",
+      "htmlUrl": "https://github.com/linux-do/credit/blob/3c0ff2684ad3fde49634d769833f2c4e35b33334/.github/workflows/copilot-setup-steps.yml",
+      "ref": "3c0ff2684ad3fde49634d769833f2c4e35b33334",
+      "metadataFiles": [],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "dfdff5bddc5a7bf3fc19f250119b72ebead9dc34959567705f3e3630d884e775",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "goaop/parser-reflection",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "f590975b5f3b406a462dcddf72a31ab0818a9687",
+      "apiUrl": "https://api.github.com/repositories/45357981/contents/.github/workflows/copilot-setup-steps.yml?ref=7fed4856e4faccb46f7816e32818f2139529f91e",
+      "htmlUrl": "https://github.com/goaop/parser-reflection/blob/7fed4856e4faccb46f7816e32818f2139529f91e/.github/workflows/copilot-setup-steps.yml",
+      "ref": "7fed4856e4faccb46f7816e32818f2139529f91e",
+      "metadataFiles": [],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "3b0320a6403f4118b7bf11c5e67c4d8cf2b292b6382c53daaea98d4d3216f1cf",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "SECRET_REFERENCE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/customize-the-agent-environment"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "GitHubSecurityLab/CodeQL-Community-Packs",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "6cf70abfafeaba6cac8875b416c12cfb3b2d3c96",
+      "apiUrl": "https://api.github.com/repositories/691021920/contents/.github/workflows/copilot-setup-steps.yml?ref=9fdfcd373e6b28469029fecf0b7f5bb633c93eea",
+      "htmlUrl": "https://github.com/GitHubSecurityLab/CodeQL-Community-Packs/blob/9fdfcd373e6b28469029fecf0b7f5bb633c93eea/.github/workflows/copilot-setup-steps.yml",
+      "ref": "9fdfcd373e6b28469029fecf0b7f5bb633c93eea",
+      "metadataFiles": [],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "5360d91d8c8bfb6bb154252fe29a44fc6302142acce524212ff69765cab37308",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "frankie567/httpx-ws",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "0387b9099f4f8ed4fed41848c44e88c940b6b8d8",
+      "apiUrl": "https://api.github.com/repositories/569161134/contents/.github/workflows/copilot-setup-steps.yml?ref=034189169aaa7ee16d4c41084925ae256f4eb860",
+      "htmlUrl": "https://github.com/frankie567/httpx-ws/blob/034189169aaa7ee16d4c41084925ae256f4eb860/.github/workflows/copilot-setup-steps.yml",
+      "ref": "034189169aaa7ee16d4c41084925ae256f4eb860",
+      "metadataFiles": ["pyproject.toml", "uv.lock"],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "43532d2ecba0d59aa0102d4741ce74d0a55730b2f13a99a380304d61e743e01e",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "INSTALL_COMMAND_MISMATCH",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "sytone/obsidian-queryallthethings",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "90c49258d426c400d6fceb704cbe637a9d98a85b",
+      "apiUrl": "https://api.github.com/repositories/635454226/contents/.github/workflows/copilot-setup-steps.yml?ref=05fd707d202c231e36a78aa57cee4bf0a0dee000",
+      "htmlUrl": "https://github.com/sytone/obsidian-queryallthethings/blob/05fd707d202c231e36a78aa57cee4bf0a0dee000/.github/workflows/copilot-setup-steps.yml",
+      "ref": "05fd707d202c231e36a78aa57cee4bf0a0dee000",
+      "metadataFiles": ["package.json", "pnpm-lock.yaml"],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "37eaad3abe879e6a49e053f885424a129cf956b6aa3c19a4217f961729a0e1fd",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "INSTALL_COMMAND_MISMATCH",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "codervisor/leanspec",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "e66cb20012849ef83d3f0d9ae3d57a3ac9c4df26",
+      "apiUrl": "https://api.github.com/repositories/1087021690/contents/.github/workflows/copilot-setup-steps.yml?ref=ee122d6fe4bdf3c22f2507e2944f5a213ddcf7a6",
+      "htmlUrl": "https://github.com/codervisor/leanspec/blob/ee122d6fe4bdf3c22f2507e2944f5a213ddcf7a6/.github/workflows/copilot-setup-steps.yml",
+      "ref": "ee122d6fe4bdf3c22f2507e2944f5a213ddcf7a6",
+      "metadataFiles": ["package.json", "pnpm-lock.yaml"],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "b2f21157fdbfa7ae9999bcab17a9622dfd13242feb08967019d4019f86acc406",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "johnpapa/hello-worlds",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "60362cd47a26d60e743e4869f817f30914823cf0",
+      "apiUrl": "https://api.github.com/repositories/254408227/contents/.github/workflows/copilot-setup-steps.yml?ref=70ce5406169b18ba504392162cb0db49bf28c5d8",
+      "htmlUrl": "https://github.com/johnpapa/hello-worlds/blob/70ce5406169b18ba504392162cb0db49bf28c5d8/.github/workflows/copilot-setup-steps.yml",
+      "ref": "70ce5406169b18ba504392162cb0db49bf28c5d8",
+      "metadataFiles": [],
+      "validatorExitCode": 1,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "invalid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "d6f71a750396dfe5ee0c03c1ba9a0c6fd82afd0bf6db1fdcd7401565c2e3c474",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "SETUP_JOB_MISSING",
+            "severity": "error",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/customize-the-agent-environment"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "swissspidy/media-experiments",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "d4880469cff956d7964920fc3c4d744009565267",
+      "apiUrl": "https://api.github.com/repositories/610996959/contents/.github/workflows/copilot-setup-steps.yml?ref=7fcdeafb2ef2ed9312b0f3af11fd2694c09f03ee",
+      "htmlUrl": "https://github.com/swissspidy/media-experiments/blob/7fcdeafb2ef2ed9312b0f3af11fd2694c09f03ee/.github/workflows/copilot-setup-steps.yml",
+      "ref": "7fcdeafb2ef2ed9312b0f3af11fd2694c09f03ee",
+      "metadataFiles": ["package-lock.json", "package.json"],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "c321d92194a6f4dd87b0c2125bb606cfb679fa1e2836bc1827d113a48e0a132f",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "sparks-baird/self-driving-lab-demo",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "0568d717d3536b4ed19a2824f8dbecd4a2961a86",
+      "apiUrl": "https://api.github.com/repositories/509867026/contents/.github/workflows/copilot-setup-steps.yml?ref=051e91e34b63e5ce357df3db7e7425186c5c635c",
+      "htmlUrl": "https://github.com/sparks-baird/self-driving-lab-demo/blob/051e91e34b63e5ce357df3db7e7425186c5c635c/.github/workflows/copilot-setup-steps.yml",
+      "ref": "051e91e34b63e5ce357df3db7e7425186c5c635c",
+      "metadataFiles": ["pyproject.toml"],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "6adc38ae754a2cf1f2bf4d411af1e14d5c3d8bf18b741e20251eaefd9c2c0923",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "LOCKFILE_MISSING",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "OpenRIAServices/OpenRiaServices",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "07d8e9731b754891d37cd031e5d6a5dbaf3489fa",
+      "apiUrl": "https://api.github.com/repositories/116034197/contents/.github/workflows/copilot-setup-steps.yml?ref=52ee9393e44fff88600216b83bf513d33f81b896",
+      "htmlUrl": "https://github.com/OpenRIAServices/OpenRiaServices/blob/52ee9393e44fff88600216b83bf513d33f81b896/.github/workflows/copilot-setup-steps.yml",
+      "ref": "52ee9393e44fff88600216b83bf513d33f81b896",
+      "metadataFiles": [],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "7c00400e1dda1604f2289f36582c759a4e767ef95ed6cbbb707a576716ec5162",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "facioquo/stock-charts",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "c0648a135066a2bbfe80fcf4657f676c1b664c11",
+      "apiUrl": "https://api.github.com/repositories/230710039/contents/.github/workflows/copilot-setup-steps.yml?ref=09464569325fb2d3e800efcb5be54781015bfb87",
+      "htmlUrl": "https://github.com/facioquo/stock-charts/blob/09464569325fb2d3e800efcb5be54781015bfb87/.github/workflows/copilot-setup-steps.yml",
+      "ref": "09464569325fb2d3e800efcb5be54781015bfb87",
+      "metadataFiles": ["package.json", "pnpm-lock.yaml"],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "b4fe9f2150f854d40d68afbb29195bc6586b4a9282e21362e12f8e1f6a3e558e",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "SECRET_REFERENCE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/customize-the-agent-environment"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "SECRET_REFERENCE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/customize-the-agent-environment"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "oocx/tfplan2md",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "01387a3af8c1ae9d01dbea715edf990665fd2b90",
+      "apiUrl": "https://api.github.com/repositories/1116451552/contents/.github/workflows/copilot-setup-steps.yml?ref=45761143860f02d154a5d5c76b785a16218437c4",
+      "htmlUrl": "https://github.com/oocx/tfplan2md/blob/45761143860f02d154a5d5c76b785a16218437c4/.github/workflows/copilot-setup-steps.yml",
+      "ref": "45761143860f02d154a5d5c76b785a16218437c4",
+      "metadataFiles": [],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "32245844a4204b6fd087b3a315471b1153ca58575d5eda35c656530b6ebfb37d",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "UNSUPPORTED_JOB_KEY",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/customize-the-agent-environment"
+          },
+          {
+            "code": "SECRET_REFERENCE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/customize-the-agent-environment"
+          },
+          {
+            "code": "SECRET_REFERENCE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/customize-the-agent-environment"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "casual-simulation/casualos",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "037d4c4f806d5b01212cb69b253b19f27bc47305",
+      "apiUrl": "https://api.github.com/repositories/181526848/contents/.github/workflows/copilot-setup-steps.yml?ref=f9a45dee6eaa4bc2d86d83a8016d0cf2584db7ed",
+      "htmlUrl": "https://github.com/casual-simulation/casualos/blob/f9a45dee6eaa4bc2d86d83a8016d0cf2584db7ed/.github/workflows/copilot-setup-steps.yml",
+      "ref": "f9a45dee6eaa4bc2d86d83a8016d0cf2584db7ed",
+      "metadataFiles": ["package.json", "pnpm-lock.yaml"],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "18161bceb7fbc9f52a7b887497b11c3c50232c63b57e33c2b3bb4fe26c7628c6",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "INSTALL_COMMAND_MISMATCH",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "WebWeWant/webwewant.fyi",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "cf1dc4efb37a817012518b031f383fd3163ee2b8",
+      "apiUrl": "https://api.github.com/repositories/185854309/contents/.github/workflows/copilot-setup-steps.yml?ref=f9fd36e23c6052e5b0dd0591387d79b4245ce684",
+      "htmlUrl": "https://github.com/WebWeWant/webwewant.fyi/blob/f9fd36e23c6052e5b0dd0591387d79b4245ce684/.github/workflows/copilot-setup-steps.yml",
+      "ref": "f9fd36e23c6052e5b0dd0591387d79b4245ce684",
+      "metadataFiles": ["package-lock.json", "package.json"],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "45a575e48f0b0689f55d74cd5d525d8ef49a3dee9ec21574ef227fa2f509f721",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "one-ware/OneWare",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "1eaf7e7640bab7e8b55e104ca3a72665bc9598d3",
+      "apiUrl": "https://api.github.com/repositories/643335518/contents/.github/workflows/copilot-setup-steps.yml?ref=8fb3f7d1cd814892cefad810b77ae667d93aaa64",
+      "htmlUrl": "https://github.com/one-ware/OneWare/blob/8fb3f7d1cd814892cefad810b77ae667d93aaa64/.github/workflows/copilot-setup-steps.yml",
+      "ref": "8fb3f7d1cd814892cefad810b77ae667d93aaa64",
+      "metadataFiles": [],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "f3671beb512cdf25d6a9b410cbb3eecd4089f2c6a8abce59a381801488a0325e",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "panoramicdata/PanoramicData.Blazor",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "614f938318bb2dba8ce0c3ba63fa1e8f7d6a5411",
+      "apiUrl": "https://api.github.com/repositories/271521082/contents/.github/workflows/copilot-setup-steps.yml?ref=afeabaf493738ad872e63b0f0d2422ff61ef6852",
+      "htmlUrl": "https://github.com/panoramicdata/PanoramicData.Blazor/blob/afeabaf493738ad872e63b0f0d2422ff61ef6852/.github/workflows/copilot-setup-steps.yml",
+      "ref": "afeabaf493738ad872e63b0f0d2422ff61ef6852",
+      "metadataFiles": ["package-lock.json", "package.json"],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "5560ca88679bcc13ce5b33588e589fdcd3c318ae640111e34be086fd1a142044",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "ptarmiganlabs/butler",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "4a9aa2808f30e68530fcbd153f7eed80535f4dee",
+      "apiUrl": "https://api.github.com/repositories/47508387/contents/.github/workflows/copilot-setup-steps.yml?ref=ad511645ab51ab9532022756ec7cc8c1ae7b24e5",
+      "htmlUrl": "https://github.com/ptarmiganlabs/butler/blob/ad511645ab51ab9532022756ec7cc8c1ae7b24e5/.github/workflows/copilot-setup-steps.yml",
+      "ref": "ad511645ab51ab9532022756ec7cc8c1ae7b24e5",
+      "metadataFiles": ["package-lock.json", "package.json"],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "adf2a974ef783189dc1121b2a6e3d55ad6120660359a3e7994b3d11b4451108e",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "NODE_SETUP_MISSING",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml"
+          },
+          {
+            "code": "INSTALL_COMMAND_MISMATCH",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "doggy8088/ChatGPTToolkitExtension",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "c600981ad342c9c5f2bf9e1e05cc6172df66b8e4",
+      "apiUrl": "https://api.github.com/repositories/606684903/contents/.github/workflows/copilot-setup-steps.yml?ref=090adf303d1262f1874ac5049b411a70e85f1702",
+      "htmlUrl": "https://github.com/doggy8088/ChatGPTToolkitExtension/blob/090adf303d1262f1874ac5049b411a70e85f1702/.github/workflows/copilot-setup-steps.yml",
+      "ref": "090adf303d1262f1874ac5049b411a70e85f1702",
+      "metadataFiles": ["package.json"],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "6fd293bf0bc9a9909f1fb4d59523ae23b5bcb820dfbb06cedac8856c813f6d64",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "LOCKFILE_MISSING",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "enola-dev/enola",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "388b4d2e4f2a99062c6d9fc13084e1b991c2ca77",
+      "apiUrl": "https://api.github.com/repositories/600383556/contents/.github/workflows/copilot-setup-steps.yml?ref=d6d5c7a1e7dcf97e58fb919d2be170faa44a2bfc",
+      "htmlUrl": "https://github.com/enola-dev/enola/blob/d6d5c7a1e7dcf97e58fb919d2be170faa44a2bfc/.github/workflows/copilot-setup-steps.yml",
+      "ref": "d6d5c7a1e7dcf97e58fb919d2be170faa44a2bfc",
+      "metadataFiles": ["package-lock.json", "package.json", "requirements.txt"],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "ef1dd04b70dd1aadfff73ed29c2a829222646f0658b088e69283f8210d2ee85e",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "NODE_SETUP_MISSING",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml"
+          },
+          {
+            "code": "PYTHON_SETUP_MISSING",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml"
+          },
+          {
+            "code": "INSTALL_COMMAND_MISMATCH",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml"
+          },
+          {
+            "code": "INSTALL_COMMAND_MISMATCH",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "executablebooks/mdit-py-plugins",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "e8fa743bdf0048a62596b3d0af141300f5eac00e",
+      "apiUrl": "https://api.github.com/repositories/321410690/contents/.github/workflows/copilot-setup-steps.yml?ref=519953da0a394a92534bc27580f4e7415462df44",
+      "htmlUrl": "https://github.com/executablebooks/mdit-py-plugins/blob/519953da0a394a92534bc27580f4e7415462df44/.github/workflows/copilot-setup-steps.yml",
+      "ref": "519953da0a394a92534bc27580f4e7415462df44",
+      "metadataFiles": ["pyproject.toml"],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "83c98e49aaa90a0a6fba2a1230ecdd4660468a2df7ad03289cbe12ea485b9f01",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "LOCKFILE_MISSING",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "onnx/ir-py",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "c2472be18eb8cfaa865d25c318e7c8c5cd58b990",
+      "apiUrl": "https://api.github.com/repositories/983196139/contents/.github/workflows/copilot-setup-steps.yml?ref=014085ef19fb4467a0f4e539cee1bcc4703c8824",
+      "htmlUrl": "https://github.com/onnx/ir-py/blob/014085ef19fb4467a0f4e539cee1bcc4703c8824/.github/workflows/copilot-setup-steps.yml",
+      "ref": "014085ef19fb4467a0f4e539cee1bcc4703c8824",
+      "metadataFiles": ["pyproject.toml"],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "6960df0f2725523d5c8c825f61082dd6404de19e2df960c02faf748febe7155c",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "LOCKFILE_MISSING",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "f3liz-casa/noraneko",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "1bbbba3d5a2043e37bfc96ec05654e66b214fd70",
+      "apiUrl": "https://api.github.com/repositories/779635904/contents/.github/workflows/copilot-setup-steps.yml?ref=8129c5f42d9b532c5267a735b3ef63d4fa26e505",
+      "htmlUrl": "https://github.com/f3liz-casa/noraneko/blob/8129c5f42d9b532c5267a735b3ef63d4fa26e505/.github/workflows/copilot-setup-steps.yml",
+      "ref": "8129c5f42d9b532c5267a735b3ef63d4fa26e505",
+      "metadataFiles": ["package.json"],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "0922027c9e402dec5ad3ea2556232ea570ef674629d182c131902bc82554940a",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "LOCKFILE_MISSING",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "xero/text0wnz",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "6ba8f47acee0748b21532c146a05a361c6018e9f",
+      "apiUrl": "https://api.github.com/repositories/663557795/contents/.github/workflows/copilot-setup-steps.yml?ref=9a1e85a6a8d9a439c5b0e007a09a1a3c727fc348",
+      "htmlUrl": "https://github.com/xero/text0wnz/blob/9a1e85a6a8d9a439c5b0e007a09a1a3c727fc348/.github/workflows/copilot-setup-steps.yml",
+      "ref": "9a1e85a6a8d9a439c5b0e007a09a1a3c727fc348",
+      "metadataFiles": ["package-lock.json", "package.json"],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "af11aa6de17f0dc2aab875e434330d58acce040f58f7005fd95efb34758b6cc4",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "NODE_SETUP_MISSING",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml"
+          },
+          {
+            "code": "INSTALL_COMMAND_MISMATCH",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "Ircam-Partiels/Partiels",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "684acd8115e51cd3ed7ce142f4a84f74214dfae1",
+      "apiUrl": "https://api.github.com/repositories/848239016/contents/.github/workflows/copilot-setup-steps.yml?ref=ec8db6213a53121c4cb7007fb155ab240594385c",
+      "htmlUrl": "https://github.com/Ircam-Partiels/Partiels/blob/ec8db6213a53121c4cb7007fb155ab240594385c/.github/workflows/copilot-setup-steps.yml",
+      "ref": "ec8db6213a53121c4cb7007fb155ab240594385c",
+      "metadataFiles": [],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "b71bbaabdf41fa071cc2285096fc07115ec822858dcf19ab6b8642807df2b804",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "WolframResearch/AgentTools",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "d742c2e139470130340e0ebd1718536aa25e2493",
+      "apiUrl": "https://api.github.com/repositories/952736880/contents/.github/workflows/copilot-setup-steps.yml?ref=d546a414a5f628af605e4fb9d817388811f6004f",
+      "htmlUrl": "https://github.com/WolframResearch/AgentTools/blob/d546a414a5f628af605e4fb9d817388811f6004f/.github/workflows/copilot-setup-steps.yml",
+      "ref": "d546a414a5f628af605e4fb9d817388811f6004f",
+      "metadataFiles": [],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "35b8049acd1481832c35eebe75ca7624ee24e409d52cdc623c32d7c60c8f6592",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "github/gh-combine",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "2872b6f1b97898dfc0725569f18df1c26164a90a",
+      "apiUrl": "https://api.github.com/repositories/959369815/contents/.github/workflows/copilot-setup-steps.yml?ref=f5b455164846778cc9dc11b670a2d6fc898f9238",
+      "htmlUrl": "https://github.com/github/gh-combine/blob/f5b455164846778cc9dc11b670a2d6fc898f9238/.github/workflows/copilot-setup-steps.yml",
+      "ref": "f5b455164846778cc9dc11b670a2d6fc898f9238",
+      "metadataFiles": [],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "19688d06ce8b82eb1b8edc1d8a3724c9a10b83dca60677f622da9a361111299c",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "sanshao85/tideterm",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "14a102c81ef83592de1179ec150687f20ae7dff1",
+      "apiUrl": "https://api.github.com/repositories/1123242906/contents/.github/workflows/copilot-setup-steps.yml?ref=50f7f8fac55f5c9123d9857801479375f9990f14",
+      "htmlUrl": "https://github.com/sanshao85/tideterm/blob/50f7f8fac55f5c9123d9857801479375f9990f14/.github/workflows/copilot-setup-steps.yml",
+      "ref": "50f7f8fac55f5c9123d9857801479375f9990f14",
+      "metadataFiles": ["package-lock.json", "package.json"],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "d014470ab5d9ade5c256479c0c768a1d523fe2ddde3edd63c8a54dc70f02d271",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "SECRET_REFERENCE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/customize-the-agent-environment"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "Hexagon/thinker-fts",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "32feff97a892ad184f299456435277bc5c3ebc7d",
+      "apiUrl": "https://api.github.com/repositories/46585046/contents/.github/workflows/copilot-setup-steps.yml?ref=8ac869e2e65f601e1cb091221d580933703b039e",
+      "htmlUrl": "https://github.com/Hexagon/thinker-fts/blob/8ac869e2e65f601e1cb091221d580933703b039e/.github/workflows/copilot-setup-steps.yml",
+      "ref": "8ac869e2e65f601e1cb091221d580933703b039e",
+      "metadataFiles": ["package-lock.json", "package.json"],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "62b426a5f1123850e64b18b644b262566cc4b74a444b02ec78bda5c43b5132bc",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "speediedan/finetuning-scheduler",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "3b63063ae140a77550da818bb737a722691b478c",
+      "apiUrl": "https://api.github.com/repositories/455666112/contents/.github/workflows/copilot-setup-steps.yml?ref=ceae3f0cf5a166c6455ca6aa6568ae219c7c3779",
+      "htmlUrl": "https://github.com/speediedan/finetuning-scheduler/blob/ceae3f0cf5a166c6455ca6aa6568ae219c7c3779/.github/workflows/copilot-setup-steps.yml",
+      "ref": "ceae3f0cf5a166c6455ca6aa6568ae219c7c3779",
+      "metadataFiles": ["pyproject.toml"],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "627f1e42975597780779e845e0ce4be5290805d08feae674cdc6ce1e70522302",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "UNSUPPORTED_JOB_KEY",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/customize-the-agent-environment"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "LOCKFILE_MISSING",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "johnpapa/heroes-react",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "8b9d7bab6ad2cec32575b5102932343ccee84fb1",
+      "apiUrl": "https://api.github.com/repositories/154898282/contents/.github/workflows/copilot-setup-steps.yml?ref=ed1b2946139221487306b9e214a44f1c5ba451f5",
+      "htmlUrl": "https://github.com/johnpapa/heroes-react/blob/ed1b2946139221487306b9e214a44f1c5ba451f5/.github/workflows/copilot-setup-steps.yml",
+      "ref": "ed1b2946139221487306b9e214a44f1c5ba451f5",
+      "metadataFiles": ["package-lock.json", "package.json", "yarn.lock"],
+      "validatorExitCode": 1,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "invalid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "82fa166d71e97fe2d161e87266dc63c2fa6325e6472109db458b1631fa3f15d5",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "SETUP_JOB_MISSING",
+            "severity": "error",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/customize-the-agent-environment"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "SigmaNight/basiliskLLM",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "254b19dfe3d02e30418b880b1519ee682059d7a1",
+      "apiUrl": "https://api.github.com/repositories/776769741/contents/.github/workflows/copilot-setup-steps.yml?ref=7466082a7154847e46d25c9f8ed3f1cb97059875",
+      "htmlUrl": "https://github.com/SigmaNight/basiliskLLM/blob/7466082a7154847e46d25c9f8ed3f1cb97059875/.github/workflows/copilot-setup-steps.yml",
+      "ref": "7466082a7154847e46d25c9f8ed3f1cb97059875",
+      "metadataFiles": ["pyproject.toml", "uv.lock"],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "e61c3f5d3984975d606dd44bb4893e53ca3a3f211b39dddf495cdb6109f17109",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "PYTHON_SETUP_MISSING",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "api2r/beekeeper",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "e1907e16d0c1fc670b76561c148bd5acd20dca42",
+      "apiUrl": "https://api.github.com/repositories/621988117/contents/.github/workflows/copilot-setup-steps.yml?ref=05e9d25304fc406b1d91104e4f8c69195fad9f80",
+      "htmlUrl": "https://github.com/api2r/beekeeper/blob/05e9d25304fc406b1d91104e4f8c69195fad9f80/.github/workflows/copilot-setup-steps.yml",
+      "ref": "05e9d25304fc406b1d91104e4f8c69195fad9f80",
+      "metadataFiles": [],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "d7124be6f8b6a2e9ab5feb58bccd4a734532fa5652b882df59382147fa46a71c",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "SECRET_REFERENCE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/customize-the-agent-environment"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "mitchdenny/hex1b",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "04405339acf270a3a258e08c977e0ff5429c9d3a",
+      "apiUrl": "https://api.github.com/repositories/1111094078/contents/.github/workflows/copilot-setup-steps.yml?ref=0404a5f5d19793f5d38b5ebcf3af5c3c225e0359",
+      "htmlUrl": "https://github.com/mitchdenny/hex1b/blob/0404a5f5d19793f5d38b5ebcf3af5c3c225e0359/.github/workflows/copilot-setup-steps.yml",
+      "ref": "0404a5f5d19793f5d38b5ebcf3af5c3c225e0359",
+      "metadataFiles": [],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "68857af3c806f85170c121122b919c41ac3c7c7e3b0834df8937e21940d51b9d",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "obophenotype/bio-attribute-ontology",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "4eea2ce9d389f3cdcb1ddffc49cc1ae681bbfb42",
+      "apiUrl": "https://api.github.com/repositories/33902526/contents/.github/workflows/copilot-setup-steps.yml?ref=410cd6cff55e2b1929f94e30eea42b6bc4ecee04",
+      "htmlUrl": "https://github.com/obophenotype/bio-attribute-ontology/blob/410cd6cff55e2b1929f94e30eea42b6bc4ecee04/.github/workflows/copilot-setup-steps.yml",
+      "ref": "410cd6cff55e2b1929f94e30eea42b6bc4ecee04",
+      "metadataFiles": [],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "0d74be7b765cbcff9dc7386ca2b6aebdec1d572c63c5d4084dcc470ea345de86",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "catalystneuro/neuroconv",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "14265fd0a18d5dc8164ebf3fdefb0d204f397c07",
+      "apiUrl": "https://api.github.com/repositories/515668556/contents/.github/workflows/copilot-setup-steps.yml?ref=7e3e6b9ca5fe5c767fe915dbd841198a1405cf03",
+      "htmlUrl": "https://github.com/catalystneuro/neuroconv/blob/7e3e6b9ca5fe5c767fe915dbd841198a1405cf03/.github/workflows/copilot-setup-steps.yml",
+      "ref": "7e3e6b9ca5fe5c767fe915dbd841198a1405cf03",
+      "metadataFiles": ["pyproject.toml"],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "bcba4960b529083cf4d9ff39165e848276a81e7803e585f50f8c7892e0421df7",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "SECRET_REFERENCE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/customize-the-agent-environment"
+          },
+          {
+            "code": "LOCKFILE_MISSING",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "bridje/bridje",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "12b6b4ee466e556705561d23edbbd9a87463db0b",
+      "apiUrl": "https://api.github.com/repositories/71700816/contents/.github/workflows/copilot-setup-steps.yml?ref=b69a8d08b7018bb04b4a59c1dd75a025fc80c360",
+      "htmlUrl": "https://github.com/bridje/bridje/blob/b69a8d08b7018bb04b4a59c1dd75a025fc80c360/.github/workflows/copilot-setup-steps.yml",
+      "ref": "b69a8d08b7018bb04b4a59c1dd75a025fc80c360",
+      "metadataFiles": [],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "29d65b73b37de65ad2b5c03760d8c92bb956d68cf28c49bf02a26c22197ccbf1",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "sweetalert2/sweetalert2.github.io",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "3702288178229195d5b7827b81abe2d63cf0073e",
+      "apiUrl": "https://api.github.com/repositories/116409972/contents/.github/workflows/copilot-setup-steps.yml?ref=c557adff6ca63d5f9b8c43143bed300a8d41bd65",
+      "htmlUrl": "https://github.com/sweetalert2/sweetalert2.github.io/blob/c557adff6ca63d5f9b8c43143bed300a8d41bd65/.github/workflows/copilot-setup-steps.yml",
+      "ref": "c557adff6ca63d5f9b8c43143bed300a8d41bd65",
+      "metadataFiles": ["package.json"],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "9dcb2e50c2109fb1cfe01d53e2e7d83948dd73946f471a883c441dff5c14ac2e",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "LOCKFILE_MISSING",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "microsoft/GSL",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "d37f633df2dce2f6599588c6cc8b1d38e2c9a2ae",
+      "apiUrl": "https://api.github.com/repositories/41005795/contents/.github/workflows/copilot-setup-steps.yml?ref=a75212b9f3b14162edd62d540cbf9273d5a59d20",
+      "htmlUrl": "https://github.com/microsoft/GSL/blob/a75212b9f3b14162edd62d540cbf9273d5a59d20/.github/workflows/copilot-setup-steps.yml",
+      "ref": "a75212b9f3b14162edd62d540cbf9273d5a59d20",
+      "metadataFiles": [],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "72a8763898db909a2b903c8ebce694eacd450b7d7a1d0b0e88a5b28727661a85",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "DestinyItemManager/DIM",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "40ea512a711f37f082effb77bef6f605afb660d5",
+      "apiUrl": "https://api.github.com/repositories/31681575/contents/.github/workflows/copilot-setup-steps.yml?ref=85938587faa3839c5a0ccdb8f0e84af5b7c10f66",
+      "htmlUrl": "https://github.com/DestinyItemManager/DIM/blob/85938587faa3839c5a0ccdb8f0e84af5b7c10f66/.github/workflows/copilot-setup-steps.yml",
+      "ref": "85938587faa3839c5a0ccdb8f0e84af5b7c10f66",
+      "metadataFiles": ["package.json", "pnpm-lock.yaml"],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "6cd880a701ecabc61c953585e4c34efd2159dfa5dd15d8ad84b606edd00d7349",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          }
+        ],
+        "patchCount": 0
+      }
+    },
+    {
+      "repository": "lakehq/sail",
+      "path": ".github/workflows/copilot-setup-steps.yml",
+      "fileSha": "26898c9ad1e3297742ec6dadd4a1aa528a4f510c",
+      "apiUrl": "https://api.github.com/repositories/734174248/contents/.github/workflows/copilot-setup-steps.yml?ref=a11db8125f4d133de0c87931d188985991e5c043",
+      "htmlUrl": "https://github.com/lakehq/sail/blob/a11db8125f4d133de0c87931d188985991e5c043/.github/workflows/copilot-setup-steps.yml",
+      "ref": "a11db8125f4d133de0c87931d188985991e5c043",
+      "metadataFiles": ["package.json", "pnpm-lock.yaml", "pyproject.toml"],
+      "validatorExitCode": 0,
+      "status": "validated",
+      "validation": {
+        "schemaVersion": 1,
+        "status": "valid",
+        "workflowPath": ".github/workflows/copilot-setup-steps.yml",
+        "workflowHash": "c3db87151168bb7ee1a866ab7140dbc9881a8c4fe022300c141c7abc2b1a7d57",
+        "policyHash": "f7706bbbe9d291c4b61f8518f3e2ceebfb78379c5942a0c1d5025bd1f3b2ca60",
+        "findings": [
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "ACTION_REF_MUTABLE",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml",
+            "documentationUrl": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          },
+          {
+            "code": "LOCKFILE_MISSING",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml"
+          },
+          {
+            "code": "INSTALL_COMMAND_MISMATCH",
+            "severity": "warning",
+            "path": ".github/workflows/copilot-setup-steps.yml"
+          }
+        ],
+        "patchCount": 0
+      }
+    }
+  ]
+}

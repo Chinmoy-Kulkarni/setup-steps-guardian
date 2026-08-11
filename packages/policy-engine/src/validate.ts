@@ -2,7 +2,13 @@ import type { Finding, FindingSeverity, ValidationResult } from "@setup-fleet/co
 import { detectPackageManagers, packageManagerCommandMatches } from "./detection.js";
 import { createMissingWorkflowPatch } from "./generator.js";
 import { sha256, stableStringify } from "./hash.js";
-import { type ConfigurableSeverity, DEFAULT_POLICY, type Policy, parsePolicy } from "./policy.js";
+import {
+  type ConfigurableSeverity,
+  DEFAULT_POLICY,
+  type Policy,
+  parseAllowedRunnerEntry,
+  parsePolicy,
+} from "./policy.js";
 import { isRecord, parseYamlDocument, YamlParseError } from "./yaml.js";
 
 const WORKFLOW_PATH = ".github/workflows/copilot-setup-steps.yml";
@@ -86,6 +92,90 @@ function hasWorkflowDispatch(trigger: unknown): boolean {
   return isRecord(trigger) && Object.hasOwn(trigger, "workflow_dispatch");
 }
 
+interface RunnerSelection {
+  readonly group?: string;
+  readonly labels: readonly string[];
+  readonly architectureLabels: readonly string[];
+}
+
+function runnerSelection(value: unknown): RunnerSelection | undefined {
+  if (typeof value === "string") {
+    return value.trim().length === 0 ? undefined : { labels: [value], architectureLabels: [value] };
+  }
+
+  if (Array.isArray(value)) {
+    if (
+      value.length === 0 ||
+      !value.every((entry) => typeof entry === "string" && entry.trim().length > 0)
+    ) {
+      return undefined;
+    }
+    return { labels: value, architectureLabels: value };
+  }
+
+  if (!isRecord(value)) {
+    return undefined;
+  }
+
+  let group: string | undefined;
+  const labels: string[] = [];
+  const architectureLabels: string[] = [];
+  if (value.group !== undefined) {
+    if (typeof value.group !== "string" || value.group.trim().length === 0) {
+      return undefined;
+    }
+    group = value.group;
+  }
+
+  if (value.labels !== undefined) {
+    if (typeof value.labels === "string" && value.labels.trim().length > 0) {
+      labels.push(value.labels);
+      architectureLabels.push(value.labels);
+    } else if (
+      Array.isArray(value.labels) &&
+      value.labels.length > 0 &&
+      value.labels.every((label) => typeof label === "string" && label.trim().length > 0)
+    ) {
+      labels.push(...value.labels);
+      architectureLabels.push(...value.labels);
+    } else {
+      return undefined;
+    }
+  }
+
+  return group === undefined && labels.length === 0
+    ? undefined
+    : { ...(group === undefined ? {} : { group }), labels, architectureLabels };
+}
+
+function unsupportedRunner(labels: readonly string[]): string | undefined {
+  return labels.find((label) => {
+    const normalized = label.toLowerCase();
+    return (
+      normalized === "macos" ||
+      normalized.startsWith("macos-") ||
+      normalized.includes("arm64") ||
+      normalized.includes("aarch64") ||
+      /(?:^|-)arm(?:-|$)/.test(normalized)
+    );
+  });
+}
+
+function runnerAllowed(selection: RunnerSelection, policy: Policy): boolean {
+  if (policy.allowedRunners.includes("*")) {
+    return true;
+  }
+
+  const allowedEntries = policy.allowedRunners.map(parseAllowedRunnerEntry);
+  const groupAllowed =
+    selection.group === undefined ||
+    allowedEntries.some((entry) => entry.kind === "group" && entry.value === selection.group);
+  const labelsAllowed = selection.labels.every((label) =>
+    allowedEntries.some((entry) => entry.kind === "label" && entry.value === label),
+  );
+  return groupAllowed && labelsAllowed;
+}
+
 function isExplicitReadOnlyPermissions(value: unknown): boolean {
   if (!isRecord(value)) {
     return false;
@@ -108,7 +198,16 @@ function stepName(step: Record<string, unknown>, index: number): string {
 
 function runCommands(steps: readonly Record<string, unknown>[]): string {
   return steps
-    .map((step) => (typeof step.run === "string" ? step.run : ""))
+    .flatMap((step) => {
+      const commands: string[] = [];
+      if (typeof step.run === "string") {
+        commands.push(step.run);
+      }
+      if (isRecord(step.with) && typeof step.with.command === "string") {
+        commands.push(step.with.command);
+      }
+      return commands;
+    })
     .filter((command) => command.length > 0)
     .join("\n");
 }
@@ -117,6 +216,16 @@ function hasAction(steps: readonly Record<string, unknown>[], action: string): b
   return steps.some(
     (step) => typeof step.uses === "string" && step.uses.toLowerCase().startsWith(`${action}@`),
   );
+}
+
+function hasDependencyInstallAction(
+  steps: readonly Record<string, unknown>[],
+  packageManager: string,
+): boolean {
+  if (!["npm", "pnpm", "yarn"].includes(packageManager)) {
+    return false;
+  }
+  return hasAction(steps, "bahmutov/npm-install");
 }
 
 function validateJob(
@@ -157,6 +266,22 @@ function validateJob(
     ];
   }
 
+  const additionalJobs = Object.keys(jobs).filter((jobName) => jobName !== "copilot-setup-steps");
+  for (const jobName of additionalJobs) {
+    findings.push(
+      finding({
+        code: "ADDITIONAL_JOB",
+        severity: "error",
+        title: "Setup workflow contains an additional job",
+        message: `GitHub documents this special workflow as a single copilot-setup-steps job, but found "${jobName}".`,
+        path,
+        evidence: { job: jobName },
+        remediation: `Remove "${jobName}" or move its steps into copilot-setup-steps.`,
+        documentationUrl: SETUP_DOCS,
+      }),
+    );
+  }
+
   const unsupportedSeverity = configuredSeverity(policy.unsupportedJobKeys);
   if (unsupportedSeverity !== undefined) {
     for (const key of Object.keys(setupJob)) {
@@ -177,31 +302,51 @@ function validateJob(
     }
   }
 
-  if (typeof setupJob["runs-on"] !== "string") {
+  const selectedRunner = runnerSelection(setupJob["runs-on"]);
+  const runnerRestrictionsEnabled = !policy.allowedRunners.includes("*");
+  if (selectedRunner === undefined) {
     findings.push(
       finding({
         code: "RUNNER_MISSING",
         severity: "error",
-        title: "Runner label is missing",
-        message: "The setup job must select a supported runner.",
+        title: "Runner selection is missing or invalid",
+        message: "The setup job must select a valid GitHub Actions runner.",
         path,
-        remediation: `Set runs-on to one of: ${policy.allowedRunners.join(", ")}.`,
+        remediation: runnerRestrictionsEnabled
+          ? `Set runs-on using only: ${policy.allowedRunners.join(", ")}.`
+          : "Set runs-on to a supported GitHub Actions runner label, label array, or group.",
         documentationUrl: SETUP_DOCS,
       }),
     );
-  } else if (!policy.allowedRunners.includes(setupJob["runs-on"])) {
-    findings.push(
-      finding({
-        code: "RUNNER_NOT_ALLOWED",
-        severity: "error",
-        title: "Runner is outside the organization policy",
-        message: `Runner "${setupJob["runs-on"]}" is not approved.`,
-        path,
-        evidence: { runner: setupJob["runs-on"] },
-        remediation: `Use one of: ${policy.allowedRunners.join(", ")}.`,
-        documentationUrl: SETUP_DOCS,
-      }),
-    );
+  } else {
+    const unsupportedLabel = unsupportedRunner(selectedRunner.architectureLabels);
+    if (unsupportedLabel !== undefined) {
+      findings.push(
+        finding({
+          code: "RUNNER_UNSUPPORTED",
+          severity: "error",
+          title: "Runner is unsupported by Copilot cloud agent",
+          message: `GitHub documents only Ubuntu x64 and Windows x64 runners, but the selection includes "${unsupportedLabel}".`,
+          path,
+          evidence: { runner: JSON.stringify(setupJob["runs-on"]) },
+          remediation: "Use an Ubuntu x64 or Windows x64 runner label or runner group.",
+          documentationUrl: SETUP_DOCS,
+        }),
+      );
+    } else if (runnerRestrictionsEnabled && !runnerAllowed(selectedRunner, policy)) {
+      findings.push(
+        finding({
+          code: "RUNNER_NOT_ALLOWED",
+          severity: "error",
+          title: "Runner is outside the organization policy",
+          message: `Runner selection ${JSON.stringify(setupJob["runs-on"])} is not approved.`,
+          path,
+          evidence: { runner: JSON.stringify(setupJob["runs-on"]) },
+          remediation: `Use only approved runner labels or groups: ${policy.allowedRunners.join(", ")}.`,
+          documentationUrl: SETUP_DOCS,
+        }),
+      );
+    }
   }
 
   const timeout = setupJob["timeout-minutes"];
@@ -362,9 +507,10 @@ function validateJob(
     findings.push(
       finding({
         code: "NODE_SETUP_MISSING",
-        severity: "error",
+        severity: "warning",
         title: "Node.js runtime setup is missing",
-        message: "A Node.js lockfile exists but actions/setup-node is not used.",
+        message:
+          "A Node.js lockfile exists but actions/setup-node is not used, so the runtime version may depend on the runner image.",
         path,
         remediation: "Add actions/setup-node before installing Node.js dependencies.",
       }),
@@ -375,9 +521,10 @@ function validateJob(
     findings.push(
       finding({
         code: "PYTHON_SETUP_MISSING",
-        severity: "error",
+        severity: "warning",
         title: "Python runtime setup is missing",
-        message: "A Python lockfile exists but actions/setup-python is not used.",
+        message:
+          "A Python lockfile exists but actions/setup-python is not used, so the runtime version may depend on the runner image.",
         path,
         remediation: "Add actions/setup-python before installing Python dependencies.",
       }),
@@ -385,16 +532,19 @@ function validateJob(
   }
 
   for (const packageManager of detection.packageManagers) {
-    if (!packageManagerCommandMatches(packageManager, commands)) {
+    if (
+      !packageManagerCommandMatches(packageManager, commands) &&
+      !hasDependencyInstallAction(steps, packageManager)
+    ) {
       findings.push(
         finding({
           code: "INSTALL_COMMAND_MISMATCH",
-          severity: "error",
-          title: "Deterministic install command is missing",
-          message: `The workflow does not use the expected locked install for ${packageManager}.`,
+          severity: "warning",
+          title: "Explicitly lock-protected dependency install was not detected",
+          message: `A ${packageManager} lockfile exists, but the workflow does not contain a recognized ${packageManager} install with explicit lockfile protection.`,
           path,
           evidence: { packageManager },
-          remediation: `Use the documented deterministic install command for ${packageManager}.`,
+          remediation: `If the coding agent needs these dependencies, add the recommended lock-protected install command for ${packageManager}.`,
         }),
       );
     }

@@ -1,6 +1,6 @@
 import type { PatchProposal } from "@setup-fleet/contracts";
 import { type PackageManager, packageManagerInstallCommand } from "./detection.js";
-import type { Policy } from "./policy.js";
+import { type Policy, parseAllowedRunnerEntry } from "./policy.js";
 
 const WORKFLOW_PATH = ".github/workflows/copilot-setup-steps.yml";
 const CHECKOUT_REF = "actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803";
@@ -65,6 +65,18 @@ function pythonSteps(packageManager: PackageManager): string[] {
   return steps;
 }
 
+function runnerLines(policy: Policy): string[] {
+  const entry = policy.allowedRunners.find((runner) => runner !== "*");
+  if (entry === undefined) {
+    return ["    runs-on: ubuntu-latest"];
+  }
+
+  const selection = parseAllowedRunnerEntry(entry);
+  return selection.kind === "group"
+    ? ["    runs-on:", `      group: ${JSON.stringify(selection.value)}`]
+    : [`    runs-on: ${JSON.stringify(selection.value)}`];
+}
+
 export function generateRecommendedWorkflow(
   policy: Policy,
   packageManagers: readonly PackageManager[],
@@ -117,7 +129,7 @@ export function generateRecommendedWorkflow(
     "",
     "jobs:",
     "  copilot-setup-steps:",
-    `    runs-on: ${policy.allowedRunners[0]}`,
+    ...runnerLines(policy),
     `    timeout-minutes: ${Math.min(policy.maxTimeoutMinutes, 30)}`,
     "    permissions:",
     "      contents: read",

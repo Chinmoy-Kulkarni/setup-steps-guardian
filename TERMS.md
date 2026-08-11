@@ -1,12 +1,12 @@
-# Terms draft
+# Terms
 
-This repository contains a pre-launch implementation. These terms are not active until the
-owner approves and publishes a complete legal identity, contact method, pricing, refund policy,
-governing terms, and merchant-of-record disclosures.
+The SetupStepsGuardian source code is provided under the [MIT License](LICENSE).
 
-The intended product provides deterministic workflow validation and read-only fleet metadata.
-It does not guarantee that coding agents, builds, tests, deployments, or repositories will work,
-remain secure, or remain compliant. Users remain responsible for reviewing findings and changes.
+The validator provides deterministic review guidance. It does not guarantee that coding agents,
+builds, tests, deployments, repositories, or dependencies will work, remain secure, or remain
+compliant. Users remain responsible for reviewing findings and configuration changes.
 
-No service-level agreement, custom support, or enterprise commitment is offered in the initial
-self-service product.
+GitHub, GitHub Actions, and GitHub Copilot are third-party services governed by their own terms.
+
+No hosted service, paid plan, service-level agreement, custom support, or enterprise commitment is
+currently offered to external users. Separate active terms would be required before that changes.
