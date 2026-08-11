@@ -40,11 +40,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
-      - uses: your-org/setup-steps-guardian@FULL_40_CHARACTER_COMMIT_SHA
+      - uses: Chinmoy-Kulkarni/setup-steps-guardian@0de8f30000634b8930a2eae1a1e7b8ae20b602dc
 ```
 
-Replace `FULL_40_CHARACTER_COMMIT_SHA` with the reviewed commit SHA behind the release tag. Keep
-the full SHA pin when enabling SetupStepsGuardian in a production repository.
+This is the reviewed commit behind `v1.0.0`. Keep the full SHA pin when enabling
+SetupStepsGuardian in a production repository.
 
 ### Inputs
 
