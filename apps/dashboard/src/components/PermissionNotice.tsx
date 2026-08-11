@@ -1,8 +1,12 @@
 interface PermissionNoticeProps {
   compact?: boolean;
+  privacyHref?: string;
 }
 
-export function PermissionNotice({ compact = false }: PermissionNoticeProps) {
+export function PermissionNotice({
+  compact = false,
+  privacyHref = "/privacy",
+}: PermissionNoticeProps) {
   return (
     <section
       className={`permission-card${compact ? " permission-card-compact" : ""}`}
@@ -38,7 +42,7 @@ export function PermissionNotice({ compact = false }: PermissionNoticeProps) {
           payment information. Derived repository status and evidence metadata may be retained to
           operate the dashboard.
         </span>
-        <a className="text-link" href="/privacy">
+        <a className="text-link" href={privacyHref}>
           Read the privacy notice
         </a>
       </p>

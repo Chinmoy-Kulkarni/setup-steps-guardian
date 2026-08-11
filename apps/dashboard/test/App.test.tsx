@@ -268,4 +268,25 @@ describe("dashboard shell", () => {
     expect(screen.getByRole("link", { name: "Pricing" })).toHaveAttribute("href", "/login#pricing");
     expect(fetchMock).not.toHaveBeenCalled();
   });
+
+  it("renders an honest public preview without calling the hosted API", () => {
+    const fetchMock = vi.fn();
+    vi.stubGlobal("fetch", fetchMock);
+
+    render(<App publicPreview />);
+
+    expect(
+      screen.getByText("The GitHub Action is live; the hosted dashboard is pre-launch."),
+    ).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "Install the GitHub Action" })).toHaveAttribute(
+      "href",
+      "https://github.com/Chinmoy-Kulkarni/setup-steps-guardian#use-the-action",
+    );
+    expect(screen.getByRole("link", { name: "Request early access" })).toHaveAttribute(
+      "href",
+      "https://github.com/Chinmoy-Kulkarni/setup-steps-guardian/discussions/4",
+    );
+    expect(screen.queryByRole("link", { name: "Sign in with GitHub" })).not.toBeInTheDocument();
+    expect(fetchMock).not.toHaveBeenCalled();
+  });
 });

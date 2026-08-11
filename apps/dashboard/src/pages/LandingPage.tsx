@@ -3,12 +3,15 @@ import { PricingPlanCards } from "../components/PricingPlanCards";
 
 interface LandingPageProps {
   sessionState?: "new" | "required";
+  publicPreview?: boolean;
 }
 
 const GITHUB_SIGN_IN_URL = "/api/auth/github?return_to=%2F";
 const ACTION_SETUP_URL = "https://github.com/Chinmoy-Kulkarni/setup-steps-guardian#use-the-action";
+const DISCUSSION_URL = "https://github.com/Chinmoy-Kulkarni/setup-steps-guardian/discussions/4";
+const PRIVACY_URL = "https://github.com/Chinmoy-Kulkarni/setup-steps-guardian/blob/main/PRIVACY.md";
 
-export function LandingPage({ sessionState = "new" }: LandingPageProps) {
+export function LandingPage({ sessionState = "new", publicPreview = false }: LandingPageProps) {
   const sessionRequired = sessionState === "required";
 
   return (
@@ -32,7 +35,15 @@ export function LandingPage({ sessionState = "new" }: LandingPageProps) {
             Actions evidence, then turns selected repositories into a focused fix-first queue.
           </p>
 
-          {sessionRequired ? (
+          {publicPreview ? (
+            <div className="session-notice" role="status">
+              <strong>The GitHub Action is live; the hosted dashboard is pre-launch.</strong>
+              <span>
+                Install the free repository check now or join the public launch discussion to
+                request fleet-dashboard access.
+              </span>
+            </div>
+          ) : sessionRequired ? (
             <div className="session-notice" role="status">
               <strong>Sign in to open your dashboard.</strong>
               <span>
@@ -45,18 +56,21 @@ export function LandingPage({ sessionState = "new" }: LandingPageProps) {
           <div className="hero-actions">
             <a
               className="button button-primary"
-              href={GITHUB_SIGN_IN_URL}
-              aria-describedby="sign-in-boundary"
+              href={publicPreview ? ACTION_SETUP_URL : GITHUB_SIGN_IN_URL}
             >
-              Sign in with GitHub
+              {publicPreview ? "Install the GitHub Action" : "Sign in with GitHub"}
             </a>
-            <a className="button button-secondary" href="#how-it-works">
-              See the 3-step setup
+            <a
+              className="button button-secondary"
+              href={publicPreview ? DISCUSSION_URL : "#how-it-works"}
+            >
+              {publicPreview ? "Request dashboard access" : "See the 3-step setup"}
             </a>
           </div>
           <p className="hero-footnote" id="sign-in-boundary">
-            Signing in does not change repository access. A GitHub App installer chooses the
-            repositories, and app permissions remain read-only.
+            {publicPreview
+              ? "The public Action is ready today. Hosted sign-in and paid checkout remain disabled until production account setup is complete."
+              : "Signing in does not change repository access. A GitHub App installer chooses the repositories, and app permissions remain read-only."}
           </p>
         </div>
 
@@ -177,17 +191,21 @@ export function LandingPage({ sessionState = "new" }: LandingPageProps) {
           <div>
             <strong>Start with five selected private repositories.</strong>
             <span>
-              Paid checkout is available to the GitHub App installer after sign-in and is handled by
-              Paddle.
+              {publicPreview
+                ? "Hosted checkout is not open yet. Join the launch discussion to request early access without sharing private repository data."
+                : "Paid checkout is available to the GitHub App installer after sign-in and is handled by Paddle."}
             </span>
           </div>
-          <a className="button button-primary" href={GITHUB_SIGN_IN_URL}>
-            Start with Free
+          <a
+            className="button button-primary"
+            href={publicPreview ? DISCUSSION_URL : GITHUB_SIGN_IN_URL}
+          >
+            {publicPreview ? "Request early access" : "Start with Free"}
           </a>
         </div>
       </section>
 
-      <PermissionNotice />
+      <PermissionNotice privacyHref={publicPreview ? PRIVACY_URL : "/privacy"} />
     </div>
   );
 }

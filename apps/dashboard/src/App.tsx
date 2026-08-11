@@ -6,6 +6,12 @@ import { PrivacyPage, SupportPage, TermsPage } from "./pages/PolicyPages";
 
 type Route = "dashboard" | "login" | "privacy" | "terms" | "support" | "not-found";
 
+interface AppProps {
+  publicPreview?: boolean;
+}
+
+const DEFAULT_PUBLIC_PREVIEW = import.meta.env.VITE_PUBLIC_PREVIEW === "true";
+
 function resolveRoute(pathname: string): Route {
   const normalizedPath = pathname.replace(/\/+$/, "") || "/";
 
@@ -57,8 +63,8 @@ function NotFoundPage() {
   );
 }
 
-export function App() {
-  const route = resolveRoute(window.location.pathname);
+export function App({ publicPreview = DEFAULT_PUBLIC_PREVIEW }: AppProps) {
+  const route = publicPreview ? "login" : resolveRoute(window.location.pathname);
   let content: ReactNode;
 
   switch (route) {
@@ -66,7 +72,7 @@ export function App() {
       content = <DashboardPage />;
       break;
     case "login":
-      content = <LandingPage />;
+      content = <LandingPage publicPreview={publicPreview} />;
       break;
     case "privacy":
       content = <PrivacyPage />;
@@ -82,5 +88,9 @@ export function App() {
       break;
   }
 
-  return <AppFrame currentPage={currentPageForRoute(route)}>{content}</AppFrame>;
+  return (
+    <AppFrame currentPage={currentPageForRoute(route)} publicPreview={publicPreview}>
+      {content}
+    </AppFrame>
+  );
 }
