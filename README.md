@@ -9,7 +9,9 @@ SetupStepsGuardian is a deterministic validator and read-only fleet assurance se
 
 > **Launch status:** The GitHub Action is public and installable at `v1.0.0`. The hosted fleet
 > dashboard remains a pre-launch preview until its GitHub App, Cloudflare, Paddle, and legal
-> owner setup is complete. Share validation feedback or hosted-dashboard interest in
+> owner setup is complete. Explore the
+> [public product preview](https://chinmoy-kulkarni.github.io/setup-steps-guardian/) and share
+> validation feedback or hosted-dashboard interest in
 > [the launch discussion](https://github.com/Chinmoy-Kulkarni/setup-steps-guardian/discussions/4).
 
 The working name and `setup-steps-guardian` slug had no exact conflicts in GitHub Marketplace,
