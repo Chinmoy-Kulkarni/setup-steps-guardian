@@ -3,9 +3,11 @@ import test from "node:test";
 import {
   aggregateRecords,
   isEligiblePublicSearchItem,
+  isRetryableGitHubResponse,
   parseArguments,
   parseGitHubOutput,
   renderSummary,
+  retryDelay,
   sanitizeValidationResult,
 } from "./public-workflow-study.mjs";
 
@@ -65,6 +67,57 @@ test("parseArguments validates bounded numeric options", () => {
   assert.equal(options.censusPages, 4);
   assert.throws(() => parseArguments(["--sample-size", "0"]), /between 1 and 1000/);
   assert.throws(() => parseArguments(["--census-pages", "11"]), /between 1 and 10/);
+});
+
+test("retryDelay respects GitHub reset headers and fractional retry messages", () => {
+  const now = 1_000_000;
+  const reset = Math.floor((now + 12_000) / 1000);
+  const response = new Response("", {
+    status: 429,
+    headers: {
+      "x-ratelimit-remaining": "0",
+      "x-ratelimit-reset": String(reset),
+    },
+  });
+
+  assert.equal(retryDelay(response, 0, '{"message":"try again in 472.054249ms"}', now), 13_000);
+});
+
+test("retryDelay parses Retry-After seconds and HTTP dates", () => {
+  const now = Date.parse("2026-08-11T00:00:00.000Z");
+  assert.equal(
+    retryDelay(new Response("", { status: 429, headers: { "retry-after": "2.5" } }), 0, "", now),
+    3500,
+  );
+  assert.equal(
+    retryDelay(
+      new Response("", {
+        status: 429,
+        headers: { "retry-after": "Tue, 11 Aug 2026 00:00:05 GMT" },
+      }),
+      0,
+      "",
+      now,
+    ),
+    6000,
+  );
+});
+
+test("isRetryableGitHubResponse recognizes primary and secondary limits", () => {
+  assert.equal(
+    isRetryableGitHubResponse(
+      new Response("", { status: 403, headers: { "x-ratelimit-remaining": "1" } }),
+      '{"message":"You have exceeded a secondary rate limit. Please try again in 2s."}',
+    ),
+    true,
+  );
+  assert.equal(
+    isRetryableGitHubResponse(
+      new Response("", { status: 403, headers: { "x-ratelimit-remaining": "1" } }),
+      '{"message":"Resource not accessible by integration"}',
+    ),
+    false,
+  );
 });
 
 test("aggregateRecords separates validity, warnings, failures, and finding prevalence", () => {

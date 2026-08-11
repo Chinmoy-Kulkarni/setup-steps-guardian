@@ -128,23 +128,76 @@ function delay(milliseconds) {
   return new Promise((resolveDelay) => setTimeout(resolveDelay, milliseconds));
 }
 
-function retryDelay(response, attempt) {
+function retryDelayFromMessage(body) {
+  let message = body;
+  try {
+    const parsed = JSON.parse(body);
+    if (typeof parsed?.message === "string") {
+      message = parsed.message;
+    }
+  } catch {
+    // Non-JSON GitHub errors are still checked as plain text.
+  }
+
+  const match = message.match(
+    /try again in\s+(\d+(?:\.\d+)?)\s*(milliseconds?|ms|seconds?|secs?|s|minutes?|mins?|m)\b/i,
+  );
+  if (match === null) {
+    return undefined;
+  }
+
+  const amount = Number.parseFloat(match[1]);
+  const unit = match[2].toLowerCase();
+  if (!Number.isFinite(amount) || amount < 0) {
+    return undefined;
+  }
+  if (unit.startsWith("m") && unit !== "ms" && !unit.startsWith("millisecond")) {
+    return amount * 60_000;
+  }
+  if (unit === "ms" || unit.startsWith("millisecond")) {
+    return amount;
+  }
+  return amount * 1000;
+}
+
+export function retryDelay(response, attempt, body, now = Date.now()) {
+  const delays = [Math.min(60_000, 1000 * 2 ** attempt)];
   const retryAfter = response.headers.get("retry-after");
   if (retryAfter !== null) {
-    const seconds = Number.parseInt(retryAfter, 10);
-    if (Number.isSafeInteger(seconds) && seconds >= 0) {
-      return seconds * 1000;
+    const seconds = Number.parseFloat(retryAfter);
+    if (Number.isFinite(seconds) && seconds >= 0) {
+      delays.push(seconds * 1000);
+    } else {
+      const retryAt = Date.parse(retryAfter);
+      if (Number.isFinite(retryAt)) {
+        delays.push(Math.max(0, retryAt - now));
+      }
     }
+  }
+
+  const messageDelay = retryDelayFromMessage(body);
+  if (messageDelay !== undefined) {
+    delays.push(messageDelay);
   }
 
   if (response.headers.get("x-ratelimit-remaining") === "0") {
     const reset = Number.parseInt(response.headers.get("x-ratelimit-reset") ?? "", 10);
     if (Number.isSafeInteger(reset)) {
-      return Math.max(0, reset * 1000 - Date.now()) + 1000;
+      delays.push(Math.max(0, reset * 1000 - now));
     }
   }
 
-  return 1000 * 2 ** attempt;
+  return Math.ceil(Math.max(...delays)) + 1000;
+}
+
+export function isRetryableGitHubResponse(response, body) {
+  return (
+    response.status === 429 ||
+    response.status >= 500 ||
+    (response.status === 403 &&
+      (response.headers.get("x-ratelimit-remaining") === "0" ||
+        /secondary rate limit|abuse detection|try again in/i.test(body)))
+  );
 }
 
 function createGitHubClient(token) {
@@ -159,8 +212,9 @@ function createGitHubClient(token) {
   async function request(url, options = {}) {
     const target = url.startsWith("https://") ? url : `${apiBase}${url}`;
     let lastError;
+    const maximumAttempts = 8;
 
-    for (let attempt = 0; attempt < 4; attempt += 1) {
+    for (let attempt = 0; attempt < maximumAttempts; attempt += 1) {
       let response;
       try {
         response = await fetch(target, {
@@ -172,10 +226,14 @@ function createGitHubClient(token) {
         });
       } catch (error) {
         lastError = error;
-        if (attempt === 3) {
+        if (attempt === maximumAttempts - 1) {
           break;
         }
-        await delay(1000 * 2 ** attempt);
+        const waitMilliseconds = Math.min(60_000, 1000 * 2 ** attempt);
+        process.stderr.write(
+          `GitHub request failed before a response; retrying in ${waitMilliseconds}ms.\n`,
+        );
+        await delay(waitMilliseconds);
         continue;
       }
 
@@ -187,16 +245,16 @@ function createGitHubClient(token) {
       const responseError = new Error(
         `GitHub API ${response.status} for ${target}: ${body.slice(0, 300)}`,
       );
-      const retryable =
-        response.status === 429 ||
-        response.status >= 500 ||
-        (response.status === 403 && response.headers.get("x-ratelimit-remaining") === "0");
-      if (!retryable || attempt === 3) {
+      if (!isRetryableGitHubResponse(response, body) || attempt === maximumAttempts - 1) {
         throw responseError;
       }
 
       lastError = responseError;
-      await delay(retryDelay(response, attempt));
+      const waitMilliseconds = retryDelay(response, attempt, body);
+      process.stderr.write(
+        `GitHub API ${response.status} (${response.headers.get("x-ratelimit-resource") ?? "unknown"}); retrying in ${waitMilliseconds}ms.\n`,
+      );
+      await delay(waitMilliseconds);
     }
 
     throw lastError instanceof Error ? lastError : new Error(`GitHub request failed: ${target}`);

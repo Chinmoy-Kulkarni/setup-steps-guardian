@@ -5,16 +5,16 @@ on:
   schedule:
     - cron: "17 7 * * 1"
 
-permissions:
-  contents: read
-  discussions: read
-  issues: read
-  pull-requests: read
+concurrency:
+  group: public-evidence
+  cancel-in-progress: false
 
 jobs:
-  measure:
+  workflow-study:
+    permissions:
+      contents: read
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 75
     steps:
       - name: Checkout repository
         uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
@@ -29,24 +29,48 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
         run: node scripts/public-workflow-study.mjs --sample-size 100 --census-pages 10
 
+      - name: Publish workflow-study summary
+        run: cat .research/public-workflow-study/summary.md >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload normalized workflow-study evidence
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: public-workflow-study
+          path: |
+            .research/public-workflow-study/study.json
+            .research/public-workflow-study/summary.md
+          retention-days: 30
+
+  adoption:
+    permissions:
+      contents: read
+      discussions: read
+      issues: read
+      pull-requests: read
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+
+      - name: Set up Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+        with:
+          node-version: "24"
+
       - name: Measure public project adoption
         env:
           GH_TOKEN: ${{ github.token }}
         run: node scripts/public-adoption-metrics.mjs
 
-      - name: Publish run summary
-        run: |
-          cat .research/public-workflow-study/summary.md >> "$GITHUB_STEP_SUMMARY"
-          printf '\n\n' >> "$GITHUB_STEP_SUMMARY"
-          cat .research/public-adoption-metrics/summary.md >> "$GITHUB_STEP_SUMMARY"
+      - name: Publish adoption summary
+        run: cat .research/public-adoption-metrics/summary.md >> "$GITHUB_STEP_SUMMARY"
 
-      - name: Upload normalized evidence
+      - name: Upload normalized adoption evidence
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
-          name: public-evidence
+          name: public-adoption-metrics
           path: |
-            .research/public-workflow-study/study.json
-            .research/public-workflow-study/summary.md
             .research/public-adoption-metrics/metrics.json
             .research/public-adoption-metrics/summary.md
           retention-days: 30

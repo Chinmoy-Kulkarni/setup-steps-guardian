@@ -145,7 +145,8 @@ as confirmed usefulness.
 
 The [public evidence workflow](../.github/workflows/public-evidence.yml) also runs both measurements
 weekly and on demand, publishes the summaries in GitHub Actions, and uploads normalized artifacts
-without modifying the repository.
+without modifying the repository. Workflow-study retries honor GitHub rate-limit reset signals, and
+adoption measurement runs independently so one API quota cannot suppress the other result.
 
 ## Reproduce the workflow study
 
