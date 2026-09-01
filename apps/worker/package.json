@@ -14,11 +14,11 @@
     "@setup-fleet/data": "workspace:*",
     "@setup-fleet/github": "workspace:*",
     "@setup-fleet/policy-engine": "workspace:*",
-    "hono": "^4.9.6",
-    "zod": "^4.1.5"
+    "hono": "^4.13.5",
+    "zod": "^4.5.2"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^5.20260810.1",
-    "wrangler": "^4.120.1"
+    "@cloudflare/workers-types": "^5.20260829.1",
+    "wrangler": "^4.127.1"
   }
 }
